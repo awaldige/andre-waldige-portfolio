@@ -33,7 +33,12 @@
     <header>
         <div class="container header-content">
             <h1 class="logo">André<span>.</span>Waldige</h1>
-            <nav aria-label="Navegação secundária">
+            
+            <button class="mobile-menu-btn" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu" aria-label="Navegação secundária">
                 <ul>
                     <li><a href="index.html#sobre">Sobre</a></li>
                     <li><a href="index.html#servicos">Serviços</a></li>
@@ -78,7 +83,7 @@
                             <div class="tecnologias"><span>Charts.js</span><span>Node.js</span></div>
                             <div class="botoes-projeto">      
                                 <a href="https://dashboard-demostracao.vercel.app/" target="_blank" class="btn-primario">Ver Online</a>
-                                <a href="https://github.com/awaldige/Dashboard-Demostracao target="_blank" class="btn-secundario"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://github.com/awaldige/Dashboard-Demostracao" target="_blank" class="btn-secundario"><i class="fab fa-github"></i> GitHub</a>
                             </div>
                         </div>
                     </article>
@@ -234,5 +239,17 @@
         </div>
     </footer>
 
+    <script>
+        // Script do Menu Hambúrguer para projetos.html
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
 </body>
 </html>
