@@ -60,8 +60,8 @@ Alguns dos sistemas que você encontrará detalhados no portfólio:
 ✉️ Contato
 Estou aberto a novas oportunidades, colaborações e desafios técnicos:
 
-LinkedIn: André Waldige
+LinkedIn: [André Waldige](https://www.linkedin.com/in/awaldige780606/)
 
-GitHub: @awaldige
+GitHub: https://github.com/awaldige
 
 Developed with ☕ and ❤️ by André Waldige.   
