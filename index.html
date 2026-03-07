@@ -34,7 +34,12 @@
     <header>
         <div class="container header-content">
             <h1 class="logo">André<span>.</span>Waldige</h1>
-            <nav aria-label="Navegação principal">
+            
+            <button class="mobile-menu-btn" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu" aria-label="Navegação principal">
                 <ul>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#servicos">Serviços</a></li>
@@ -247,6 +252,7 @@
     </footer>
 
     <script>
+        // Script de Animação de Scroll (O que você já tinha)
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -259,6 +265,28 @@
         }
         window.addEventListener("scroll", reveal);
         window.onload = reveal;
+
+        // Adicionado: Script do Menu Hambúrguer
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        const menuLinks = document.querySelectorAll('.nav-menu a');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Fecha o menu ao clicar em um link (importante para mobile)
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
     </script>
 </body>
 </html>
