@@ -31,6 +31,16 @@
 
 <body>
 
+    <div id="loader">
+        <div class="loader-content">
+            <span class="code-text">André.Waldige( )</span>
+            <div class="progress-bar-loader">
+                <div class="progress-fill-loader"></div>
+            </div>
+            <span class="status-loader">Iniciando Laboratório...</span>
+        </div>
+    </div>
+
     <header>
         <div class="container header-content">
             <h1 class="logo">André<span>.</span>Waldige</h1>
@@ -52,26 +62,23 @@
     </header>
 
     <main>
-   <section class="hero reveal">
-    <div class="container">
-        <h2>Desenvolvedor <span class="highlight">Full Stack</span></h2>
-        
-        <p>
-            Construindo soluções robustas através de <strong>projetos práticos</strong>. 
-            Especialista em arquitetura de APIs e interfaces modernas, unindo lógica de negócio para 
-            <span class="highlight">empresas</span> e performance para <span class="highlight">projetos independentes</span>.
-        </p>
+        <section class="hero reveal">
+            <div class="container">
+                <h2>Desenvolvedor <span class="highlight">Full Stack</span></h2>
+                <p>
+                    Construindo soluções robustas através de <strong>projetos práticos</strong>. 
+                    Especialista em arquitetura de APIs e interfaces modernas, unindo lógica de negócio para 
+                    <span class="highlight">empresas</span> e performance para <span class="highlight">projetos independentes</span>.
+                </p>
 
-        <div class="hero-buttons">
-            <a href="#projetos" class="btn-primario">Explorar LAB</a>
-            
-            <a href="https://wa.me/5511985878638" target="_blank" rel="noopener noreferrer" class="btn-secundario">
-                WhatsApp <i class="fab fa-whatsapp"></i>
-            </a>
-                       
-        </div>
-    </div>
-</section>
+                <div class="hero-buttons">
+                    <a href="#projetos" class="btn-primario">Explorar LAB</a>
+                    <a href="https://wa.me/5511985878638" target="_blank" rel="noopener noreferrer" class="btn-secundario">
+                        WhatsApp <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <section id="sobre" class="reveal">
             <div class="container sobre-container">
@@ -260,7 +267,19 @@
     </footer>
 
     <script>
-        // Script de Animação de Scroll (O que você já tinha)
+        // --- CONTROLE DO LOADER (5 SEGUNDOS) ---
+        window.addEventListener("load", () => {
+            const loader = document.getElementById("loader");
+            
+            // Define o tempo de exibição (5000ms = 5 segundos)
+            setTimeout(() => {
+                loader.classList.add("loader-hidden");
+                // Chama o reveal logo após o loader sumir
+                setTimeout(reveal, 400); 
+            }, 5000);
+        });
+
+        // --- ANIMAÇÃO DE SCROLL ---
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -272,9 +291,8 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        window.onload = reveal;
 
-        // Adicionado: Script do Menu Hambúrguer
+        // --- MENU HAMBÚRGUER ---
         const menuBtn = document.querySelector('.mobile-menu-btn');
         const navMenu = document.querySelector('.nav-menu');
         const menuLinks = document.querySelectorAll('.nav-menu a');
@@ -286,7 +304,6 @@
             icon.classList.toggle('fa-times');
         });
 
-        // Fecha o menu ao clicar em um link (importante para mobile)
         menuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -298,6 +315,3 @@
     </script>
 </body>
 </html>
-
-
-
