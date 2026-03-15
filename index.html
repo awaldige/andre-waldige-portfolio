@@ -3,80 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>André Waldige | Full Stack Developer</title>
+    <title>André Waldige | Portfólio</title>
     
-    <meta name="theme-color" content="#10b981">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* Trava de segurança para Android */
-        html, body { overflow-x: hidden; width: 100%; position: relative; }
+        /* FIX ANDROID: Trava o balanço lateral e estabiliza o viewport */
+        html, body { 
+            overflow-x: hidden; 
+            width: 100%; 
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
 
-        /* LOADER TECH - 10 SEGUNDOS */
+        /* LOADER ORIGINAL - 10 SEGUNDOS */
         #loader {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: #0f172a;
             display: flex; justify-content: center; align-items: center;
             z-index: 9999;
-            transition: opacity 1s ease, visibility 1s;
+            transition: opacity 0.8s ease;
         }
-        .loader-content { text-align: center; }
-        .code-text {
-            display: block;
-            font-family: 'Courier New', monospace;
-            color: #10b981;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            animation: pulseText 2s infinite;
+        .loader-content { text-align: center; font-family: 'Inter', sans-serif; }
+        .code-text { color: #10b981; display: block; margin-bottom: 10px; font-family: monospace; }
+        .progress-bar-loader { width: 200px; height: 3px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden; }
+        .progress-fill-loader { 
+            width: 0%; height: 100%; background: #10b981; 
+            animation: loadProgress 10s linear forwards; 
         }
-        .progress-bar-loader {
-            width: 200px; height: 4px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px; overflow: hidden;
-            margin: 0 auto;
-        }
-        .progress-fill-loader {
-            width: 0%; height: 100%;
-            background: #10b981;
-            animation: progress 10s linear forwards;
-        }
-        @keyframes progress { to { width: 100%; } }
-        @keyframes pulseText { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        @keyframes loadProgress { to { width: 100%; } }
         .loader-hidden { opacity: 0; visibility: hidden; }
 
-        /* Estilo dos Botões dos Projetos para não quebrar no mobile */
-        .botoes-projeto {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        .btn-card-p, .btn-card-s {
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-        }
-        .btn-card-p { background: #10b981; color: white; flex: 2; }
-        .btn-card-s { background: #1e293b; color: white; flex: 1; border: 1px solid #334155; }
-        .btn-card-p:hover { background: #059669; }
-        .btn-card-s:hover { background: #334155; }
+        /* Ajuste de cards para manter os botões alinhados */
+        .botoes-projeto { display: flex; gap: 8px; margin-top: 15px; }
+        .btn-card-p { background: #10b981; color: #fff; padding: 8px 12px; border-radius: 4px; text-decoration: none; flex: 1; text-align: center; font-size: 14px; }
+        .btn-card-s { background: #1e293b; color: #fff; padding: 8px 12px; border-radius: 4px; text-decoration: none; font-size: 14px; }
     </style>
 </head>
 <body>
 
     <div id="loader">
         <div class="loader-content">
-            <span class="code-text">Inicializando ambiente_andre...</span>
+            <span class="code-text">Iniciando Laboratório...</span>
             <div class="progress-bar-loader">
                 <div class="progress-fill-loader"></div>
             </div>
@@ -86,13 +57,10 @@
     <header>
         <div class="container header-content">
             <h1 class="logo">André<span>.</span>Waldige</h1>
-            <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
             <nav class="nav-menu">
                 <ul>
                     <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#competencias">Stack</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -102,10 +70,10 @@
     <main>
         <section class="hero">
             <div class="container">
-                <span class="badge">Disponível para Projetos e Recrutamento</span>
+                <span class="badge">Disponível para novos projetos</span>
                 <h2>Transformando ideias em <br><span class="highlight">Sistemas Inteligentes</span></h2>
-                <p>Desenvolvedor Full Stack focado em criar aplicações robustas, automações eficientes e experiências digitais de alto impacto.</p>
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 35px;">
+                <p>Desenvolvedor Full Stack focado em criar aplicações robustas e automações eficientes.</p>
+                <div class="hero-btns">
                     <a href="#projetos" class="btn-primario">Ver Projetos</a>
                     <a href="#contato" class="btn-secundario">Falar Comigo</a>
                 </div>
@@ -113,132 +81,38 @@
         </section>
 
         <section id="projetos" class="container">
-            <div class="reveal" style="text-align: center; margin-bottom: 50px;">
-                <span class="badge">Portfólio</span>
-                <h2>Projetos em <span class="highlight">Destaque</span></h2>
-            </div>
             <div class="grid-projetos">
-                
                 <article class="card-projeto reveal">
                     <img src="img/gerador de contrato.jpeg" alt="Projeto">
                     <div class="conteudo-projeto">
                         <h3>Gerador de Contrato</h3>
-                        <p>Automação de documentos com PDF Lib.</p>
-                        <div class="tecnologias"><span>JavaScript</span><span>PDF</span></div>
+                        <p>Automação de documentos jurídicos.</p>
                         <div class="botoes-projeto">
                             <a href="https://aw-contract-generator.vercel.app/" target="_blank" class="btn-card-p">Online</a>
                             <a href="https://github.com/awaldige/contract-generator" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </article>
-
-                <article class="card-projeto reveal">
-                    <img src="img/automanager-pro.jpg" alt="Projeto">
-                    <div class="conteudo-projeto">
-                        <h3>AutoManager Pro</h3>
-                        <p>Sistema ERP para gestão de estoque e vendas.</p>
-                        <div class="tecnologias"><span>PHP 8</span><span>MySQL</span></div>
-                        <div class="botoes-projeto">
-                            <a href="https://awaldige.infinityfree.me/vendascarros/" target="_blank" class="btn-card-p">Online</a>
-                            <a href="https://github.com/awaldige/AutoManagerPro" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card-projeto reveal">
-                    <img src="img/sistema_agendamento.jpeg" alt="Projeto">
-                    <div class="conteudo-projeto">
-                        <h3>Agendamento Tech</h3>
-                        <p>Gestão de horários e fluxos de atendimento.</p>
-                        <div class="tecnologias"><span>PHP</span><span>PDO</span></div>
-                        <div class="botoes-projeto">
-                            <a href="https://sistema-agendamento-fm7r.onrender.com/" target="_blank" class="btn-card-p">Online</a>
-                            <a href="https://github.com/awaldige/sistema_agendamento" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card-projeto reveal">
-                    <img src="img/dashboard-demo.jpg" alt="Projeto">
-                    <div class="conteudo-projeto">
-                        <h3>Dashboard Admin</h3>
-                        <p>Análise de dados com métricas interativas.</p>
-                        <div class="tecnologias"><span>Node.js</span><span>Charts</span></div>
-                        <div class="botoes-projeto">
-                            <a href="https://dashboard-demostracao.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                            <a href="https://github.com/awaldige/Dashboard-Demostracao" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card-projeto reveal">
-                    <img src="img/calculadora-fiscal.jpg" alt="Projeto">
-                    <div class="conteudo-projeto">
-                        <h3>Calculadora Fiscal</h3>
-                        <p>Simulador financeiro de impostos e taxas.</p>
-                        <div class="tecnologias"><span>JS Logic</span><span>Web</span></div>
-                        <div class="botoes-projeto">
-                            <a href="https://awaldige.github.io/calculo-de-inss-e-imposto-de-renda/" target="_blank" class="btn-card-p">Online</a>
-                            <a href="https://github.com/awaldige/calculo-de-inss-e-imposto-de-renda" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card-projeto reveal">
-                    <img src="img/pizzaria.jpeg" alt="Projeto">
-                    <div class="conteudo-projeto">
-                        <h3>Cardápio Pizzaria</h3>
-                        <p>Carrinho de compras via WhatsApp API.</p>
-                        <div class="tecnologias"><span>DOM JS</span><span>API</span></div>
-                        <div class="botoes-projeto">
-                            <a href="https://cardapio-pizzaria-aw.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                            <a href="https://github.com/awaldige/Cardapio-Pizzaria-AW" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
+                
+                </div>
+            
             <div style="text-align: center; margin-top: 50px;">
-                <a href="projetos.html" class="btn-secundario">Ver Todos os Projetos</a>
-            </div>
-        </section>
-
-        <section id="contato" class="container reveal">
-            <div class="contato-form">
-                <h2>Vamos <span class="highlight">Trabalhar Juntos?</span></h2>
-                <form action="https://formsubmit.co/seuemail@email.com" method="POST">
-                    <input type="text" name="name" placeholder="Nome" required>
-                    <input type="email" name="email" placeholder="E-mail" required>
-                    <textarea name="message" placeholder="Como posso ajudar seu negócio ou empresa?" rows="4" required></textarea>
-                    <button type="submit" class="btn-primario">Enviar Mensagem</button>
-                </form>
+                <a href="projetos.html" class="btn-secundario">Ver Laboratório Completo (Mais Projetos)</a>
             </div>
         </section>
     </main>
 
-    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
     <script>
-        // Loader 10 segundos
+        // Mantém a tela travada por 10 segundos como solicitado
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').classList.add('loader-hidden');
-            }, 10000); 
+            }, 10000);
         });
 
-        // Mobile Menu & Reveal
-        const btn = document.querySelector('.mobile-menu-btn');
-        const menu = document.querySelector('.nav-menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            btn.querySelector('i').classList.toggle('fa-bars');
-            btn.querySelector('i').classList.toggle('fa-times');
-        });
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        // Correção de altura para Android (evita o balanço da barra de navegação)
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
     </script>
 </body>
 </html>
