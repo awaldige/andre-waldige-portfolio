@@ -2,65 +2,57 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>André Waldige | Portfólio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>André Waldige | Desenvolvedor Full Stack</title>
+    <meta name="description" content="Desenvolvedor Full Stack focado em transformar desafios técnicos em aplicações reais. Conheça meu laboratório de projetos modernos e APIs escaláveis.">
     
+    <meta name="theme-color" content="#10b981">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andre-waldige.vercel.app/"> 
+    <meta property="og:title" content="André Waldige | Desenvolvedor Full Stack">
+    <meta property="og:description" content="Especialista em arquitetura de APIs e interfaces modernas. Explore meu laboratório de projetos.">
+    <meta property="og:image" content="https://andre-waldige.vercel.app/img/banner-share.jpg">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="css/style.css">
 
-    <style>
-        /* FIX ANDROID: Trava o balanço lateral e estabiliza o viewport */
-        html, body { 
-            overflow-x: hidden; 
-            width: 100%; 
-            position: relative;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* LOADER ORIGINAL - 10 SEGUNDOS */
-        #loader {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: #0f172a;
-            display: flex; justify-content: center; align-items: center;
-            z-index: 9999;
-            transition: opacity 0.8s ease;
-        }
-        .loader-content { text-align: center; font-family: 'Inter', sans-serif; }
-        .code-text { color: #10b981; display: block; margin-bottom: 10px; font-family: monospace; }
-        .progress-bar-loader { width: 200px; height: 3px; background: rgba(255,255,255,0.1); border-radius: 5px; overflow: hidden; }
-        .progress-fill-loader { 
-            width: 0%; height: 100%; background: #10b981; 
-            animation: loadProgress 10s linear forwards; 
-        }
-        @keyframes loadProgress { to { width: 100%; } }
-        .loader-hidden { opacity: 0; visibility: hidden; }
-
-        /* Ajuste de cards para manter os botões alinhados */
-        .botoes-projeto { display: flex; gap: 8px; margin-top: 15px; }
-        .btn-card-p { background: #10b981; color: #fff; padding: 8px 12px; border-radius: 4px; text-decoration: none; flex: 1; text-align: center; font-size: 14px; }
-        .btn-card-s { background: #1e293b; color: #fff; padding: 8px 12px; border-radius: 4px; text-decoration: none; font-size: 14px; }
-    </style>
+    <script defer src="/_vercel/insights/script.js"></script>
 </head>
+
 <body>
 
     <div id="loader">
         <div class="loader-content">
-            <span class="code-text">Iniciando Laboratório...</span>
+            <span class="code-text">André.Waldige( )</span>
             <div class="progress-bar-loader">
                 <div class="progress-fill-loader"></div>
             </div>
+            <span class="status-loader">Iniciando Laboratório...</span>
         </div>
     </div>
 
     <header>
         <div class="container header-content">
             <h1 class="logo">André<span>.</span>Waldige</h1>
-            <nav class="nav-menu">
+            
+            <button class="mobile-menu-btn" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu" aria-label="Navegação principal">
                 <ul>
                     <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#competencias">Stack</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -68,51 +60,271 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero reveal">
             <div class="container">
-                <span class="badge">Disponível para novos projetos</span>
-                <h2>Transformando ideias em <br><span class="highlight">Sistemas Inteligentes</span></h2>
-                <p>Desenvolvedor Full Stack focado em criar aplicações robustas e automações eficientes.</p>
-                <div class="hero-btns">
-                    <a href="#projetos" class="btn-primario">Ver Projetos</a>
-                    <a href="#contato" class="btn-secundario">Falar Comigo</a>
+                <span class="badge">Disponível para Projetos & Freelance</span>
+                <h2>Desenvolvedor <span class="highlight">Full Stack</span></h2>
+                <p>
+                    Construindo soluções robustas através de <strong>projetos práticos</strong>. 
+                    Especialista em arquitetura de APIs e interfaces modernas, unindo lógica de negócio e 
+                    performance para <span class="highlight">empresas</span> e <span class="highlight">projetos independentes</span>.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projetos" class="btn-primario">Explorar LAB</a>
+                    <a href="https://wa.me/5511985878638" target="_blank" rel="noopener noreferrer" class="btn-secundario">
+                        WhatsApp <i class="fab fa-whatsapp"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section id="projetos" class="container">
-            <div class="grid-projetos">
-                <article class="card-projeto reveal">
-                    <img src="img/gerador de contrato.jpeg" alt="Projeto">
-                    <div class="conteudo-projeto">
-                        <h3>Gerador de Contrato</h3>
-                        <p>Automação de documentos jurídicos.</p>
-                        <div class="botoes-projeto">
-                            <a href="https://aw-contract-generator.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                            <a href="https://github.com/awaldige/contract-generator" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </article>
-                
+        <section id="sobre" class="reveal">
+            <div class="container sobre-container">
+                <div class="foto-area">
+                    <img src="img/avatar-andre.jpg" alt="André Waldige" class="sobre-foto">
                 </div>
-            
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="projetos.html" class="btn-secundario">Ver Laboratório Completo (Mais Projetos)</a>
+                <div class="texto-area">
+                    <h2>Sobre</h2>
+                    <p>Minha jornada como desenvolvedor é movida pela <strong>prática constante</strong>. Acredito que a melhor forma de dominar uma tecnologia é resolvendo problemas reais de ponta a ponta.</p>
+                    <p style="margin-top: 20px;">Desenvolvo ecossistemas completos com foco em Node.js e JavaScript, priorizando sempre o código limpo, escalabilidade de banco de dados e a melhor experiência para o usuário final.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="reveal">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 40px;">Soluções Estratégicas</h2>
+                <div class="grid-servicos">
+                    <div class="card-servico">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Performance & Web</h3>
+                        <p>Interfaces de alta performance, otimizadas para SEO e conversão, utilizando as melhores práticas de UI/UX.</p>
+                    </div>
+                    <div class="card-servico">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Sistemas Inteligentes</h3>
+                        <p>Desenvolvimento de aplicações sob medida para automação de processos, gestão de dados e Dashboards interativos.</p>
+                    </div>
+                    <div class="card-servico">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Arquitetura Backend</h3>
+                        <p>Construção de APIs escaláveis, integração de bancos de dados robustos e sistemas de autenticação seguros.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="reveal">
+            <div class="container">
+                <h2 class="section-title">Projetos em Destaque</h2>
+                <div class="grid-projetos">
+                    
+                    <article class="card-projeto">
+                        <img src="img/desenhos antigos.jpeg" alt="Streaming de Desenhos Antigos" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <h3>Streaming de Desenhos</h3>
+                            <p>Plataforma de vídeo com interface moderna inspirada em serviços globais, focada em curadoria de mídia clássica e navegação por categorias.</p>
+                            <div class="tecnologias"><span>Node.js</span><span>Express</span><span>JavaScript</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://streaming-desenhos-antigos.onrender.com/" target="_blank" class="btn-card-p">Online</a>
+                                <a href="https://github.com/awaldige/streaming-desenhos-antigos" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card-projeto">
+    <img src="img/nexus-task.jpg" alt="Nexus Task Manager" loading="lazy">
+    <div class="conteudo-projeto">
+        <h3>Nexus Task</h3>
+        <p>Gerenciador de tarefas avançado com arquitetura robusta, interface intuitiva e foco em performance para gestão de fluxos de trabalho.</p>
+        
+        <div class="tecnologias">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Tailwind CSS</span>
+            <span>Lucide React</span>
+        </div>
+
+        <div class="botoes-projeto">
+            <a href="https://nexus-tasker.vercel.app/" target="_blank" class="btn-card-p">Online</a>
+            <a href="https://github.com/awaldige/Nexus-Task" target="_blank" class="btn-card-s">
+                <i class="fab fa-github"></i> GitHub</a>
+        </div>
+    </div>
+</article>
+
+                    <article class="card-projeto">
+                        <img src="img/loja-ebooks.jpg" alt="Loja de eBooks" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <h3>Loja de eBooks</h3>
+                            <p>E-commerce funcional com filtros dinâmicos, cálculos automáticos de carrinho e interface focada em conversão de vendas.</p>
+                            <div class="tecnologias"><span>JavaScript</span><span>DOM</span><span>Frontend</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://lojaebooks.vercel.app/" target="_blank" class="btn-card-p">Online</a>
+                                <a href="https://github.com/awaldige/loja-ebooks-js" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card-projeto">
+                        <img src="img/pesquisa-livros.jpg" alt="Pesquisa de Livros" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <h3>Pesquisa de Livros</h3>
+                            <p>Aplicação integrada a APIs externas para consulta de acervos em tempo real, utilizando Fetch API para tratamento de dados assíncronos.</p>
+                            <div class="tecnologias"><span>API</span><span>JSON</span><span>JavaScript</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://pesquisa-de-livros.vercel.app" target="_blank" class="btn-card-p">Online</a>
+                                <a href="https://github.com/awaldige/Pesquisa-de-Livros" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card-projeto">
+                        <img src="img/filmes&series.jpeg" alt="Pesquisa de Filmes e Séries" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <h3>Filmes & Séries</h3>
+                            <p>Catálogo interativo para busca global de títulos, consumindo APIs REST para exibição dinâmica de detalhes e avaliações.</p>
+                            <div class="tecnologias"><span>REST API</span><span>JavaScript</span><span>CSS3</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://pesquisa-de-filmes-e-serie.vercel.app/" target="_blank" class="btn-card-p">Online</a>
+                                <a href="https://github.com/awaldige/Pesquisa-de-filmes-e-serie" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card-projeto">
+                        <img src="img/automanager.jpg" alt="AUTOPRO OS" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <h3>AUTOPRO OS</h3>
+                            <p>ERP automotivo completo para gestão de frotas, com tabelas relacionais SQL, controle de clientes e registros administrativos.</p>
+                            <div class="tecnologias"><span>Node.js</span><span>MySQL</span><span>Express</span></div>
+                            <div class="botoes-projeto">
+                                <a href="http://awaldige.infinityfree.me/autopro/" target="_blank" class="btn-card-p">Online</a>
+                                <a href="https://github.com/awaldige/AutoManagerPro" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div style="text-align:center; margin-top:50px;">
+                    <a href="projetos.html" class="btn-secundario">Ver Galeria Completa →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="competencias" class="reveal">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 40px;">Especialidades Técnicas</h2>
+                <div class="grid-competencias">
+                    <div class="card-competencia">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Interface & UX</h3>
+                        <ul>
+                            <li><i class="fab fa-html5"></i> Estruturas Semânticas</li>
+                            <li><i class="fab fa-css3-alt"></i> Flexbox & Grid Systems</li>
+                            <li><i class="fab fa-js"></i> JavaScript Moderno (ES6+)</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-competencia">
+                        <i class="fas fa-terminal"></i>
+                        <h3>Backend</h3>
+                        <ul>
+                            <li><i class="fab fa-node-js"></i> Node.js & Express</li>
+                            <li><i class="fas fa-code-branch"></i> APIs RESTful</li>
+                            <li><i class="fas fa-database"></i> MySQL & SQLite</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-competencia">
+                        <i class="fas fa-vial"></i>
+                        <h3>Infra & Ferramentas</h3>
+                        <ul>
+                            <li><i class="fab fa-git-alt"></i> Git & Versionamento</li>
+                            <li><i class="fas fa-cloud"></i> Vercel / Render / InfinityFree</li>
+                            <li><i class="fas fa-box-open"></i> NPM & Boas Práticas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="reveal">
+            <div class="container">
+                <h2 style="text-align: center;">Contato</h2>
+                <p style="text-align: center; margin-bottom: 30px; color: var(--text-muted);">Estou aberto a novas oportunidades e desafios técnicos.</p>
+                
+                <form action="https://formspree.io/f/maqdgzad" method="POST" class="contato-form">
+                    <input type="text" name="nome" placeholder="Seu nome" required>
+                    <input type="email" name="email" placeholder="Seu e-mail" required>
+                    <textarea name="mensagem" rows="5" placeholder="Como posso ajudar seu projeto?" required></textarea>
+                    
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <button type="submit" class="btn-primario" style="width: 100%; cursor: pointer;">Enviar Mensagem</button>
+                </form>
             </div>
         </section>
     </main>
 
+    <a href="https://wa.me/5511985878638" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale comigo no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+ <footer>
+        <div class="container footer-ultra-minimal">
+            <p>&copy; 2026 André Waldige | Desenvolvedor Full Stack</p>
+            <div class="footer-links">
+                <a href="https://github.com/awaldige" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/awaldige780606/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
     <script>
-        // Mantém a tela travada por 10 segundos como solicitado
-        window.addEventListener('load', () => {
+        // Controle do Loader (5 Segundos)
+        window.addEventListener("load", () => {
+            const loader = document.getElementById("loader");
             setTimeout(() => {
-                document.getElementById('loader').classList.add('loader-hidden');
-            }, 10000);
+                loader.classList.add("loader-hidden");
+                setTimeout(reveal, 400); 
+            }, 5000);
         });
 
-        // Correção de altura para Android (evita o balanço da barra de navegação)
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        // Animação Reveal ao dar Scroll
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+
+        // Menu Mobile
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        const menuLinks = document.querySelectorAll('.nav-menu a');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = menuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
     </script>
 </body>
 </html>
