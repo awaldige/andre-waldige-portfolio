@@ -10,7 +10,6 @@
 html { 
     scroll-behavior: smooth; 
     font-size: 16px; 
-    /* Evita saltos de layout durante o scroll */
     overflow-x: hidden;
 }
 
@@ -19,7 +18,7 @@ body {
     background-color: #0b1121; 
     color: #e2e8f0;
     line-height: 1.6; 
-    /* TRAVA DE SEGURANÇA: Impede balanço lateral no Android/Chrome */
+    /* TRAVA ANDROID: Impede balanço lateral */
     overflow-x: hidden;
     width: 100%;
     position: relative;
@@ -42,7 +41,7 @@ body {
 strong { color: #10b981; }
 
 /* =========================================
-   2. INTRODUÇÃO ANIMADA (LOADER)
+   2. INTRODUÇÃO ANIMADA (LOADER) - AJUSTADA 10S
    ========================================= */
 #loader {
     position: fixed;
@@ -90,7 +89,8 @@ strong { color: #10b981; }
     width: 0;
     height: 100%;
     background: #10b981;
-    animation: progress-load 4.5s linear forwards;
+    /* MODIFICAÇÃO: Ajustado para 10 segundos conforme pedido */
+    animation: progress-load 10s linear forwards;
 }
 
 .status-loader {
@@ -166,12 +166,23 @@ header {
 .nav-menu a:hover { color: #10b981; }
 
 /* =========================================
-   5. HERO & BOTÕES
+   5. HERO & BOTÕES (CORREÇÃO ANDROID LADO A LADO)
    ========================================= */
 .hero { 
     padding: clamp(80px, 15vh, 130px) 0; 
     text-align: center; 
     background: radial-gradient(circle at center, #112a28 0%, #0b1121 100%); 
+}
+
+/* MODIFICAÇÃO: Hero-Buttons travados para Mobile */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: nowrap; /* Impede quebra de linha no Android */
+    width: 100%;
 }
 
 .badge {
@@ -204,13 +215,16 @@ header {
     display: inline-flex; 
     align-items: center; 
     justify-content: center;
-    padding: 14px 30px; 
+    padding: 14px 25px; 
     border-radius: 8px; 
     text-decoration: none;
     font-weight: 600; 
     transition: 0.3s;
     cursor: pointer;
     gap: 10px;
+    flex: 1; /* Faz os botões dividirem o espaço 50/50 */
+    max-width: 180px;
+    white-space: nowrap; /* Impede texto em duas linhas */
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -413,7 +427,7 @@ input, textarea {
 input:focus, textarea:focus { border-color: #10b981; }
 
 /* =========================================
-   10. FOOTER & WHATSAPP (OTIMIZADO)
+   10. FOOTER & WHATSAPP
    ========================================= */
 footer {
     background: #0b1121;
@@ -455,7 +469,7 @@ footer {
     width: 60px; 
     height: 60px; 
     bottom: 25px; 
-    right: 25px; /* Recuado para evitar overflow no Android */
+    right: 25px; 
     background: #10b981; 
     color: white; 
     border-radius: 50%;
@@ -471,7 +485,7 @@ footer {
 
 @keyframes pulse-green {
     0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-    70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); } /* Reduzido alcance da sombra */
+    70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); } 
     100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
@@ -502,7 +516,7 @@ footer {
         transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1050;
         box-shadow: -10px 0 30px rgba(0,0,0,0.5);
-        visibility: hidden; /* CORREÇÃO: Remove o menu do cálculo de largura enquanto oculto */
+        visibility: hidden; 
     }
 
     .nav-menu.active { 
@@ -520,8 +534,18 @@ footer {
 
     .sobre-foto { margin: 0 auto; }
     
-    .hero { padding: 80px 0; }
+    .hero { padding: 60px 0; }
     .hero h2 { font-size: 2.2rem; }
+
+    /* Força os botões da Hero a ficarem lado a lado mesmo em telas menores */
+    .hero-buttons {
+        flex-direction: row !important;
+        gap: 8px;
+    }
+    .btn-primario, .btn-secundario {
+        font-size: 0.85rem;
+        padding: 12px 10px;
+    }
     
     .footer-ultra-minimal {
         flex-direction: column;
@@ -537,7 +561,7 @@ footer {
     }
 }
 
-/* Garante que imagens e tabelas não quebrem o layout horizontal */
+/* Garante que imagens não quebrem o layout */
 img, video, canvas, svg {
     max-width: 100%;
     height: auto;
