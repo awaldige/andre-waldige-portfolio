@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>André Waldige | Desenvolvedor Full Stack</title>
+    <title>André Waldige | Full Stack Developer</title>
     
     <meta name="theme-color" content="#10b981">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,67 +13,55 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* Correção para Android e Estilo do Loader André Waldige */
-        html, body {
-            overflow-x: hidden;
-            width: 100%;
-            position: relative;
-        }
+        /* Estabilização para Android */
+        html, body { overflow-x: hidden; width: 100%; position: relative; }
 
+        /* LOADER ANTERIOR (ESTILO TERMINAL/TECH) */
         #loader {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: #0f172a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: flex; justify-content: center; align-items: center;
             z-index: 9999;
             transition: opacity 0.8s ease, visibility 0.8s;
         }
-
-        .loader-name {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #f8fafc;
-            letter-spacing: -1px;
-            overflow: hidden;
-            border-right: 4px solid #10b981;
-            white-space: nowrap;
-            margin: 0 auto;
-            animation: typing 2s steps(15, end), blink-caret 0.75s step-end infinite;
+        .loader-content { text-align: center; }
+        .code-text {
+            display: block;
+            font-family: 'Courier New', monospace;
+            color: #10b981;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
         }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 320px } /* Ajuste conforme o tamanho do nome */
+        .progress-bar-loader {
+            width: 200px; height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px; overflow: hidden;
         }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #10b981 }
+        .progress-fill-loader {
+            width: 0%; height: 100%;
+            background: #10b981;
+            animation: progress 2s ease-in-out forwards;
         }
-
-        .loader-hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
+        @keyframes progress { to { width: 100%; } }
+        .loader-hidden { opacity: 0; visibility: hidden; }
     </style>
 </head>
 <body>
 
     <div id="loader">
-        <h1 class="loader-name">André Waldige<span>.</span></h1>
+        <div class="loader-content">
+            <span class="code-text">System.init("André Waldige")...</span>
+            <div class="progress-bar-loader">
+                <div class="progress-fill-loader"></div>
+            </div>
+        </div>
     </div>
 
     <header>
         <div class="container header-content">
             <h1 class="logo">André<span>.</span>Waldige</h1>
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
             <nav class="nav-menu">
                 <ul>
                     <li><a href="#sobre">Sobre</a></li>
@@ -89,12 +77,12 @@
     <main>
         <section class="hero">
             <div class="container">
-                <span class="badge">Disponível para novos projetos</span>
+                <span class="badge">Disponível para Projetos e Oportunidades</span>
                 <h2>Transformando ideias em <br><span class="highlight">Sistemas Inteligentes</span></h2>
-                <p>Desenvolvedor Full Stack focado em criar aplicações robustas, automações eficientes e experiências digitais de alto impacto.</p>
+                <p>Desenvolvedor Full Stack especializado em arquiteturas robustas para empresas e soluções sob medida para negócios digitais.</p>
                 <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
-                    <a href="#projetos" class="btn-primario">Ver Projetos <i class="fas fa-code"></i></a>
-                    <a href="#contato" class="btn-secundario">Falar Comigo <i class="fab fa-whatsapp"></i></a>
+                    <a href="#projetos" class="btn-primario">Explorar Portfólio</a>
+                    <a href="#contato" class="btn-secundario">Contratar Serviço</a>
                 </div>
             </div>
         </section>
@@ -103,9 +91,9 @@
             <div class="sobre-container">
                 <img src="img/avatar-andre.jpg" alt="André Waldige" class="sobre-foto">
                 <div class="sobre-texto">
-                    <span class="badge">Especialista Full Stack</span>
-                    <h3>Olá, eu sou o <strong>André Waldige</strong></h3>
-                    <p>Especialista em unir a lógica do Back-end com a fluidez do Front-end. Minha missão é resolver problemas complexos através de código limpo.</p>
+                    <span class="badge">Perfil Profissional</span>
+                    <h3>Especialista em <strong>Soluções Web</strong></h3>
+                    <p>Atuo no desenvolvimento de sistemas que otimizam processos reais. Seja integrando um time de engenharia ou liderando um projeto do zero, meu foco é código limpo e entrega de valor.</p>
                 </div>
             </div>
         </section>
@@ -113,24 +101,24 @@
         <section id="servicos" style="background: rgba(17, 26, 46, 0.3); padding: 80px 0;">
             <div class="container">
                 <div class="reveal" style="text-align: center; margin-bottom: 50px;">
-                    <span class="badge">Especialidades</span>
-                    <h2>O que eu <span class="highlight">Entrego</span></h2>
+                    <span class="badge">Expertise</span>
+                    <h2>Soluções de <span class="highlight">Alto Impacto</span></h2>
                 </div>
                 <div class="grid-servicos">
                     <div class="card-servico reveal">
                         <i class="fas fa-laptop-code"></i>
                         <h3>Sistemas Web</h3>
-                        <p>Desenvolvimento de plataformas completas, do banco de dados à interface do usuário.</p>
+                        <p>Plataformas robustas, do banco de dados ao front-end, prontas para escala.</p>
                     </div>
                     <div class="card-servico reveal">
                         <i class="fas fa-robot"></i>
                         <h3>Automação</h3>
-                        <p>Criação de scripts e robôs para automatizar tarefas repetitivas e gerar documentos.</p>
+                        <p>Scripts e APIs para eliminar tarefas manuais e integrar fluxos de trabalho.</p>
                     </div>
                     <div class="card-servico reveal">
                         <i class="fas fa-rocket"></i>
                         <h3>Landing Pages</h3>
-                        <p>Páginas de alta conversão otimizadas para SEO e dispositivos móveis.</p>
+                        <p>Páginas de alta conversão focadas em resultados e performance mobile.</p>
                     </div>
                 </div>
             </div>
@@ -138,8 +126,8 @@
 
         <section id="projetos" class="container">
             <div class="reveal" style="text-align: center; margin-bottom: 50px;">
-                <span class="badge">Destaques</span>
-                <h2>Galeria de <span class="highlight">Projetos</span></h2>
+                <span class="badge">Casos de Sucesso</span>
+                <h2>Projetos de <span class="highlight">Destaque</span></h2>
             </div>
             <div class="grid-projetos">
                 <article class="card-projeto reveal">
@@ -148,8 +136,7 @@
                         <h3>Gerador de Contrato</h3>
                         <div class="tecnologias"><span>JS</span><span>PDF Lib</span></div>
                         <div class="botoes-projeto">
-                            <a href="https://aw-contract-generator.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                            <a href="https://github.com/awaldige/contract-generator" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
+                            <a href="https://aw-contract-generator.vercel.app/" target="_blank" class="btn-card-p">Acessar</a>
                         </div>
                     </div>
                 </article>
@@ -159,8 +146,7 @@
                         <h3>AutoManager Pro</h3>
                         <div class="tecnologias"><span>PHP 8</span><span>MySQL</span></div>
                         <div class="botoes-projeto">
-                            <a href="https://awaldige.infinityfree.me/vendascarros/" target="_blank" class="btn-card-p">Online</a>
-                            <a href="https://github.com/awaldige/AutoManagerPro" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
+                            <a href="https://awaldige.infinityfree.me/vendascarros/" target="_blank" class="btn-card-p">Acessar</a>
                         </div>
                     </div>
                 </article>
@@ -170,22 +156,48 @@
                         <h3>Agendamento Tech</h3>
                         <div class="tecnologias"><span>PHP</span><span>MySQL</span></div>
                         <div class="botoes-projeto">
-                            <a href="https://sistema-agendamento-fm7r.onrender.com/" target="_blank" class="btn-card-p">Online</a>
-                            <a href="https://github.com/awaldige/sistema_agendamento" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
+                            <a href="https://sistema-agendamento-fm7r.onrender.com/" target="_blank" class="btn-card-p">Acessar</a>
                         </div>
                     </div>
                 </article>
-            </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="projetos.html" class="btn-secundario">Ver Galeria Completa</a>
+                <article class="card-projeto reveal">
+                    <img src="img/dashboard-demo.jpg" alt="Dashboard">
+                    <div class="conteudo-projeto">
+                        <h3>Dashboard Admin</h3>
+                        <div class="tecnologias"><span>Charts.js</span><span>Node.js</span></div>
+                        <div class="botoes-projeto">
+                            <a href="https://dashboard-demostracao.vercel.app/" target="_blank" class="btn-card-p">Acessar</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-projeto reveal">
+                    <img src="img/calculadora-fiscal.jpg" alt="Fiscal">
+                    <div class="conteudo-projeto">
+                        <h3>Calculadora Fiscal</h3>
+                        <div class="tecnologias"><span>JS Logic</span><span>Finance</span></div>
+                        <div class="botoes-projeto">
+                            <a href="https://awaldige.github.io/calculo-de-inss-e-imposto-de-renda/" target="_blank" class="btn-card-p">Acessar</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="card-projeto reveal">
+                    <img src="img/pizzaria.jpeg" alt="Pizzaria">
+                    <div class="conteudo-projeto">
+                        <h3>Cardápio Pizzaria</h3>
+                        <div class="tecnologias"><span>Vanilla JS</span><span>WhatsApp API</span></div>
+                        <div class="botoes-projeto">
+                            <a href="https://cardapio-pizzaria-aw.vercel.app/" target="_blank" class="btn-card-p">Acessar</a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
         <section id="competencias" style="background: rgba(17, 26, 46, 0.3); padding: 80px 0;">
             <div class="container">
                 <div class="reveal" style="text-align: center; margin-bottom: 50px;">
-                    <span class="badge">Habilidades</span>
-                    <h2>Minha <span class="highlight">Stack Técnica</span></h2>
+                    <span class="badge">Tecnologias</span>
+                    <h2>Minha <span class="highlight">Stack</span></h2>
                 </div>
                 <div class="grid-competencias">
                     <div class="card-competencia reveal">
@@ -194,7 +206,6 @@
                         <ul>
                             <li><i class="fas fa-check"></i> HTML5 & CSS3</li>
                             <li><i class="fas fa-check"></i> JavaScript (ES6+)</li>
-                            <li><i class="fas fa-check"></i> Design Responsivo</li>
                         </ul>
                     </div>
                     <div class="card-competencia reveal">
@@ -203,15 +214,14 @@
                         <ul>
                             <li><i class="fas fa-check"></i> PHP 8 (PDO/MySQL)</li>
                             <li><i class="fas fa-check"></i> Node.js</li>
-                            <li><i class="fas fa-check"></i> APIs RESTful</li>
                         </ul>
                     </div>
                     <div class="card-competencia reveal">
                         <i class="fas fa-tools"></i>
-                        <h3>Ferramentas</h3>
+                        <h3>Tools</h3>
                         <ul>
                             <li><i class="fas fa-check"></i> Git & GitHub</li>
-                            <li><i class="fas fa-check"></i> Vercel / Deploy</li>
+                            <li><i class="fas fa-check"></i> Cloud Deploy</li>
                         </ul>
                     </div>
                 </div>
@@ -220,11 +230,14 @@
 
         <section id="contato" class="container reveal">
             <div class="contato-form">
-                <h2>Vamos <span class="highlight">Conversar?</span></h2>
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <h2>Vamos <span class="highlight">Trabalhar Juntos?</span></h2>
+                    <p>Disponível para propostas CLT/PJ e projetos Freelancer.</p>
+                </div>
                 <form action="https://formsubmit.co/seuemail@email.com" method="POST">
                     <input type="text" name="nome" placeholder="Seu Nome" required>
                     <input type="email" name="email" placeholder="Seu E-mail" required>
-                    <textarea name="mensagem" rows="5" placeholder="Como posso ajudar?" required></textarea>
+                    <textarea name="mensagem" rows="5" placeholder="Descreva sua necessidade..." required></textarea>
                     <button type="submit" class="btn-primario" style="width: 100%;">Enviar Mensagem</button>
                 </form>
             </div>
@@ -233,7 +246,7 @@
 
     <footer>
         <div class="container footer-ultra-minimal">
-            <p>&copy; 2026 André Waldige | Dev Full Stack</p>
+            <p>&copy; 2026 André Waldige | Full Stack Dev</p>
             <div class="footer-links">
                 <a href="https://github.com/awaldige" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://linkedin.com/in/awaldige780606/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -246,14 +259,14 @@
     </a>
 
     <script>
-        // Scripts para Android e Reveal
+        // Loader Tech
         window.addEventListener('load', () => {
             setTimeout(() => {
-                const loader = document.getElementById('loader');
-                loader.classList.add('loader-hidden');
-            }, 2500); // Tempo para a animação de escrita terminar
+                document.getElementById('loader').classList.add('loader-hidden');
+            }, 2000);
         });
 
+        // Menu & Reveal
         const btn = document.querySelector('.mobile-menu-btn');
         const menu = document.querySelector('.nav-menu');
         btn.addEventListener('click', () => {
