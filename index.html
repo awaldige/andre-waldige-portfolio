@@ -13,17 +13,17 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* Estabilização para Android */
+        /* Trava de segurança para Android */
         html, body { overflow-x: hidden; width: 100%; position: relative; }
 
-        /* LOADER ANTERIOR (ESTILO TERMINAL/TECH) */
+        /* LOADER TECH - 10 SEGUNDOS */
         #loader {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: #0f172a;
             display: flex; justify-content: center; align-items: center;
             z-index: 9999;
-            transition: opacity 0.8s ease, visibility 0.8s;
+            transition: opacity 1s ease, visibility 1s;
         }
         .loader-content { text-align: center; }
         .code-text {
@@ -31,27 +31,52 @@
             font-family: 'Courier New', monospace;
             color: #10b981;
             margin-bottom: 15px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            animation: pulseText 2s infinite;
         }
         .progress-bar-loader {
             width: 200px; height: 4px;
             background: rgba(255,255,255,0.1);
             border-radius: 10px; overflow: hidden;
+            margin: 0 auto;
         }
         .progress-fill-loader {
             width: 0%; height: 100%;
             background: #10b981;
-            animation: progress 2s ease-in-out forwards;
+            animation: progress 10s linear forwards;
         }
         @keyframes progress { to { width: 100%; } }
+        @keyframes pulseText { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
         .loader-hidden { opacity: 0; visibility: hidden; }
+
+        /* Estilo dos Botões dos Projetos para não quebrar no mobile */
+        .botoes-projeto {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .btn-card-p, .btn-card-s {
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+        .btn-card-p { background: #10b981; color: white; flex: 2; }
+        .btn-card-s { background: #1e293b; color: white; flex: 1; border: 1px solid #334155; }
+        .btn-card-p:hover { background: #059669; }
+        .btn-card-s:hover { background: #334155; }
     </style>
 </head>
 <body>
 
     <div id="loader">
         <div class="loader-content">
-            <span class="code-text">System.init("André Waldige")...</span>
+            <span class="code-text">Inicializando ambiente_andre...</span>
             <div class="progress-bar-loader">
                 <div class="progress-fill-loader"></div>
             </div>
@@ -77,196 +102,131 @@
     <main>
         <section class="hero">
             <div class="container">
-                <span class="badge">Disponível para Projetos e Oportunidades</span>
+                <span class="badge">Disponível para Projetos e Recrutamento</span>
                 <h2>Transformando ideias em <br><span class="highlight">Sistemas Inteligentes</span></h2>
-                <p>Desenvolvedor Full Stack especializado em arquiteturas robustas para empresas e soluções sob medida para negócios digitais.</p>
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
-                    <a href="#projetos" class="btn-primario">Explorar Portfólio</a>
-                    <a href="#contato" class="btn-secundario">Contratar Serviço</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="sobre" class="container reveal">
-            <div class="sobre-container">
-                <img src="img/avatar-andre.jpg" alt="André Waldige" class="sobre-foto">
-                <div class="sobre-texto">
-                    <span class="badge">Perfil Profissional</span>
-                    <h3>Especialista em <strong>Soluções Web</strong></h3>
-                    <p>Atuo no desenvolvimento de sistemas que otimizam processos reais. Seja integrando um time de engenharia ou liderando um projeto do zero, meu foco é código limpo e entrega de valor.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="servicos" style="background: rgba(17, 26, 46, 0.3); padding: 80px 0;">
-            <div class="container">
-                <div class="reveal" style="text-align: center; margin-bottom: 50px;">
-                    <span class="badge">Expertise</span>
-                    <h2>Soluções de <span class="highlight">Alto Impacto</span></h2>
-                </div>
-                <div class="grid-servicos">
-                    <div class="card-servico reveal">
-                        <i class="fas fa-laptop-code"></i>
-                        <h3>Sistemas Web</h3>
-                        <p>Plataformas robustas, do banco de dados ao front-end, prontas para escala.</p>
-                    </div>
-                    <div class="card-servico reveal">
-                        <i class="fas fa-robot"></i>
-                        <h3>Automação</h3>
-                        <p>Scripts e APIs para eliminar tarefas manuais e integrar fluxos de trabalho.</p>
-                    </div>
-                    <div class="card-servico reveal">
-                        <i class="fas fa-rocket"></i>
-                        <h3>Landing Pages</h3>
-                        <p>Páginas de alta conversão focadas em resultados e performance mobile.</p>
-                    </div>
+                <p>Desenvolvedor Full Stack focado em criar aplicações robustas, automações eficientes e experiências digitais de alto impacto.</p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 35px;">
+                    <a href="#projetos" class="btn-primario">Ver Projetos</a>
+                    <a href="#contato" class="btn-secundario">Falar Comigo</a>
                 </div>
             </div>
         </section>
 
         <section id="projetos" class="container">
             <div class="reveal" style="text-align: center; margin-bottom: 50px;">
-                <span class="badge">Casos de Sucesso</span>
-                <h2>Projetos de <span class="highlight">Destaque</span></h2>
+                <span class="badge">Portfólio</span>
+                <h2>Projetos em <span class="highlight">Destaque</span></h2>
             </div>
             <div class="grid-projetos">
+                
                 <article class="card-projeto reveal">
-                    <img src="img/gerador de contrato.jpeg" alt="Contratos">
+                    <img src="img/gerador de contrato.jpeg" alt="Projeto">
                     <div class="conteudo-projeto">
                         <h3>Gerador de Contrato</h3>
-                        <div class="tecnologias"><span>JS</span><span>PDF Lib</span></div>
+                        <p>Automação de documentos com PDF Lib.</p>
+                        <div class="tecnologias"><span>JavaScript</span><span>PDF</span></div>
                         <div class="botoes-projeto">
-                            <a href="https://aw-contract-generator.vercel.app/" target="_blank" class="btn-card-p">Acessar</a>
+                            <a href="https://aw-contract-generator.vercel.app/" target="_blank" class="btn-card-p">Online</a>
+                            <a href="https://github.com/awaldige/contract-generator" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </article>
+
                 <article class="card-projeto reveal">
-                    <img src="img/automanager-pro.jpg" alt="ERP">
+                    <img src="img/automanager-pro.jpg" alt="Projeto">
                     <div class="conteudo-projeto">
                         <h3>AutoManager Pro</h3>
+                        <p>Sistema ERP para gestão de estoque e vendas.</p>
                         <div class="tecnologias"><span>PHP 8</span><span>MySQL</span></div>
                         <div class="botoes-projeto">
-                            <a href="https://awaldige.infinityfree.me/vendascarros/" target="_blank" class="btn-card-p">Acessar</a>
+                            <a href="https://awaldige.infinityfree.me/vendascarros/" target="_blank" class="btn-card-p">Online</a>
+                            <a href="https://github.com/awaldige/AutoManagerPro" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </article>
+
                 <article class="card-projeto reveal">
-                    <img src="img/sistema_agendamento.jpeg" alt="Agendamento">
+                    <img src="img/sistema_agendamento.jpeg" alt="Projeto">
                     <div class="conteudo-projeto">
                         <h3>Agendamento Tech</h3>
-                        <div class="tecnologias"><span>PHP</span><span>MySQL</span></div>
+                        <p>Gestão de horários e fluxos de atendimento.</p>
+                        <div class="tecnologias"><span>PHP</span><span>PDO</span></div>
                         <div class="botoes-projeto">
-                            <a href="https://sistema-agendamento-fm7r.onrender.com/" target="_blank" class="btn-card-p">Acessar</a>
+                            <a href="https://sistema-agendamento-fm7r.onrender.com/" target="_blank" class="btn-card-p">Online</a>
+                            <a href="https://github.com/awaldige/sistema_agendamento" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </article>
+
                 <article class="card-projeto reveal">
-                    <img src="img/dashboard-demo.jpg" alt="Dashboard">
+                    <img src="img/dashboard-demo.jpg" alt="Projeto">
                     <div class="conteudo-projeto">
                         <h3>Dashboard Admin</h3>
-                        <div class="tecnologias"><span>Charts.js</span><span>Node.js</span></div>
+                        <p>Análise de dados com métricas interativas.</p>
+                        <div class="tecnologias"><span>Node.js</span><span>Charts</span></div>
                         <div class="botoes-projeto">
-                            <a href="https://dashboard-demostracao.vercel.app/" target="_blank" class="btn-card-p">Acessar</a>
+                            <a href="https://dashboard-demostracao.vercel.app/" target="_blank" class="btn-card-p">Online</a>
+                            <a href="https://github.com/awaldige/Dashboard-Demostracao" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </article>
+
                 <article class="card-projeto reveal">
-                    <img src="img/calculadora-fiscal.jpg" alt="Fiscal">
+                    <img src="img/calculadora-fiscal.jpg" alt="Projeto">
                     <div class="conteudo-projeto">
                         <h3>Calculadora Fiscal</h3>
-                        <div class="tecnologias"><span>JS Logic</span><span>Finance</span></div>
+                        <p>Simulador financeiro de impostos e taxas.</p>
+                        <div class="tecnologias"><span>JS Logic</span><span>Web</span></div>
                         <div class="botoes-projeto">
-                            <a href="https://awaldige.github.io/calculo-de-inss-e-imposto-de-renda/" target="_blank" class="btn-card-p">Acessar</a>
+                            <a href="https://awaldige.github.io/calculo-de-inss-e-imposto-de-renda/" target="_blank" class="btn-card-p">Online</a>
+                            <a href="https://github.com/awaldige/calculo-de-inss-e-imposto-de-renda" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </article>
+
                 <article class="card-projeto reveal">
-                    <img src="img/pizzaria.jpeg" alt="Pizzaria">
+                    <img src="img/pizzaria.jpeg" alt="Projeto">
                     <div class="conteudo-projeto">
                         <h3>Cardápio Pizzaria</h3>
-                        <div class="tecnologias"><span>Vanilla JS</span><span>WhatsApp API</span></div>
+                        <p>Carrinho de compras via WhatsApp API.</p>
+                        <div class="tecnologias"><span>DOM JS</span><span>API</span></div>
                         <div class="botoes-projeto">
-                            <a href="https://cardapio-pizzaria-aw.vercel.app/" target="_blank" class="btn-card-p">Acessar</a>
+                            <a href="https://cardapio-pizzaria-aw.vercel.app/" target="_blank" class="btn-card-p">Online</a>
+                            <a href="https://github.com/awaldige/Cardapio-Pizzaria-AW" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </article>
-            </div>
-        </section>
 
-        <section id="competencias" style="background: rgba(17, 26, 46, 0.3); padding: 80px 0;">
-            <div class="container">
-                <div class="reveal" style="text-align: center; margin-bottom: 50px;">
-                    <span class="badge">Tecnologias</span>
-                    <h2>Minha <span class="highlight">Stack</span></h2>
-                </div>
-                <div class="grid-competencias">
-                    <div class="card-competencia reveal">
-                        <i class="fas fa-code"></i>
-                        <h3>Front-end</h3>
-                        <ul>
-                            <li><i class="fas fa-check"></i> HTML5 & CSS3</li>
-                            <li><i class="fas fa-check"></i> JavaScript (ES6+)</li>
-                        </ul>
-                    </div>
-                    <div class="card-competencia reveal">
-                        <i class="fas fa-server"></i>
-                        <h3>Back-end</h3>
-                        <ul>
-                            <li><i class="fas fa-check"></i> PHP 8 (PDO/MySQL)</li>
-                            <li><i class="fas fa-check"></i> Node.js</li>
-                        </ul>
-                    </div>
-                    <div class="card-competencia reveal">
-                        <i class="fas fa-tools"></i>
-                        <h3>Tools</h3>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Git & GitHub</li>
-                            <li><i class="fas fa-check"></i> Cloud Deploy</li>
-                        </ul>
-                    </div>
-                </div>
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="projetos.html" class="btn-secundario">Ver Todos os Projetos</a>
             </div>
         </section>
 
         <section id="contato" class="container reveal">
             <div class="contato-form">
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <h2>Vamos <span class="highlight">Trabalhar Juntos?</span></h2>
-                    <p>Disponível para propostas CLT/PJ e projetos Freelancer.</p>
-                </div>
+                <h2>Vamos <span class="highlight">Trabalhar Juntos?</span></h2>
                 <form action="https://formsubmit.co/seuemail@email.com" method="POST">
-                    <input type="text" name="nome" placeholder="Seu Nome" required>
-                    <input type="email" name="email" placeholder="Seu E-mail" required>
-                    <textarea name="mensagem" rows="5" placeholder="Descreva sua necessidade..." required></textarea>
-                    <button type="submit" class="btn-primario" style="width: 100%;">Enviar Mensagem</button>
+                    <input type="text" name="name" placeholder="Nome" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <textarea name="message" placeholder="Como posso ajudar seu negócio ou empresa?" rows="4" required></textarea>
+                    <button type="submit" class="btn-primario">Enviar Mensagem</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container footer-ultra-minimal">
-            <p>&copy; 2026 André Waldige | Full Stack Dev</p>
-            <div class="footer-links">
-                <a href="https://github.com/awaldige" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/awaldige780606/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
-        // Loader Tech
+        // Loader 10 segundos
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('loader').classList.add('loader-hidden');
-            }, 2000);
+            }, 10000); 
         });
 
-        // Menu & Reveal
+        // Mobile Menu & Reveal
         const btn = document.querySelector('.mobile-menu-btn');
         const menu = document.querySelector('.nav-menu');
         btn.addEventListener('click', () => {
