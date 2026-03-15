@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>André Waldige | Desenvolvedor Full Stack</title>
     <meta name="description" content="Desenvolvedor Full Stack focado em transformar desafios técnicos em aplicações reais. Conheça meu laboratório de projetos modernos e APIs escaláveis.">
     
@@ -23,6 +23,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* CORREÇÃO PARA ANDROID & BOTÕES LADO A LADO */
+        html, body { 
+            overflow-x: hidden; 
+            width: 100%; 
+            position: relative;
+        }
+
+        /* Força botões lado a lado no Android/iOS */
+        .hero-buttons {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            gap: 10px !important;
+            justify-content: center !important;
+            width: 100% !important;
+            max-width: 400px;
+            margin: 30px auto 0 !important;
+        }
+
+        .hero-buttons a {
+            flex: 1 !important;
+            white-space: nowrap !important;
+            font-size: 0.9rem !important;
+            padding: 12px 5px !important;
+            text-align: center !important;
+        }
+
+        /* Ajuste do Loader para 10 segundos */
+        .progress-fill-loader {
+            animation: loadProgress 10s linear forwards !important;
+        }
+        @keyframes loadProgress { to { width: 100%; } }
+
+        @media (max-width: 380px) {
+            .hero-buttons a { font-size: 0.8rem !important; }
+        }
+    </style>
 
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -134,25 +173,22 @@
                     </article>
 
                     <article class="card-projeto">
-    <img src="img/nexus-task.jpg" alt="Nexus Task Manager" loading="lazy">
-    <div class="conteudo-projeto">
-        <h3>Nexus Task</h3>
-        <p>Gerenciador de tarefas avançado com arquitetura robusta, interface intuitiva e foco em performance para gestão de fluxos de trabalho.</p>
-        
-        <div class="tecnologias">
-            <span>React</span>
-            <span>TypeScript</span>
-            <span>Tailwind CSS</span>
-            <span>Lucide React</span>
-        </div>
-
-        <div class="botoes-projeto">
-            <a href="https://nexus-tasker.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-            <a href="https://github.com/awaldige/Nexus-Task" target="_blank" class="btn-card-s">
-                <i class="fab fa-github"></i> GitHub</a>
-        </div>
-    </div>
-</article>
+                        <img src="img/nexus-task.jpg" alt="Nexus Task Manager" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <h3>Nexus Task</h3>
+                            <p>Gerenciador de tarefas avançado com arquitetura robusta, interface intuitiva e foco em performance para gestão de fluxos de trabalho.</p>
+                            <div class="tecnologias">
+                                <span>React</span>
+                                <span>TypeScript</span>
+                                <span>Tailwind CSS</span>
+                            </div>
+                            <div class="botoes-projeto">
+                                <a href="https://nexus-tasker.vercel.app/" target="_blank" class="btn-card-p">Online</a>
+                                <a href="https://github.com/awaldige/Nexus-Task" target="_blank" class="btn-card-s">
+                                    <i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
 
                     <article class="card-projeto">
                         <img src="img/loja-ebooks.jpg" alt="Loja de eBooks" loading="lazy">
@@ -282,14 +318,15 @@
             </div>
         </div>
     </footer>
+
     <script>
-        // Controle do Loader (5 Segundos)
+        // Controle do Loader (10 Segundos conforme pedido anteriormente)
         window.addEventListener("load", () => {
             const loader = document.getElementById("loader");
             setTimeout(() => {
                 loader.classList.add("loader-hidden");
                 setTimeout(reveal, 400); 
-            }, 5000);
+            }, 10000); // 10 Segundos
         });
 
         // Animação Reveal ao dar Scroll
