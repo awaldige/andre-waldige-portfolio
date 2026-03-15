@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>André Waldige | Desenvolvedor Full Stack</title>
     
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    
+    <meta name="theme-color" content="#10b981">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,23 +13,59 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* Correção específica para Android: Evita o 'pulo' do layout no scroll */
+        /* Correção para Android e Estilo do Loader André Waldige */
         html, body {
-            overflow-x: hidden; /* Previne scroll horizontal indesejado */
+            overflow-x: hidden;
             width: 100%;
             position: relative;
+        }
+
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease, visibility 0.8s;
+        }
+
+        .loader-name {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #f8fafc;
+            letter-spacing: -1px;
+            overflow: hidden;
+            border-right: 4px solid #10b981;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 2s steps(15, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 320px } /* Ajuste conforme o tamanho do nome */
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #10b981 }
+        }
+
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
         }
     </style>
 </head>
 <body>
 
     <div id="loader">
-        <div class="loader-content">
-            <span class="code-text">npm start portfolio...</span>
-            <div class="progress-bar-loader">
-                <div class="progress-fill-loader"></div>
-            </div>
-        </div>
+        <h1 class="loader-name">André Waldige<span>.</span></h1>
     </div>
 
     <header>
@@ -58,18 +92,16 @@
                 <span class="badge">Disponível para novos projetos</span>
                 <h2>Transformando ideias em <br><span class="highlight">Sistemas Inteligentes</span></h2>
                 <p>Desenvolvedor Full Stack focado em criar aplicações robustas, automações eficientes e experiências digitais de alto impacto.</p>
-                <div class="hero-btns" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-                    <a href="#projetos" class="btn-primario">Ver Projetos</a>
-                    <a href="#contato" class="btn-secundario">Falar Comigo</a>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+                    <a href="#projetos" class="btn-primario">Ver Projetos <i class="fas fa-code"></i></a>
+                    <a href="#contato" class="btn-secundario">Falar Comigo <i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </section>
 
         <section id="sobre" class="container reveal">
             <div class="sobre-container">
-                <div class="sobre-img-wrapper">
-                    <img src="img/avatar-andre.jpg" alt="André Waldige" class="sobre-foto">
-                </div>
+                <img src="img/avatar-andre.jpg" alt="André Waldige" class="sobre-foto">
                 <div class="sobre-texto">
                     <span class="badge">Especialista Full Stack</span>
                     <h3>Olá, eu sou o <strong>André Waldige</strong></h3>
@@ -78,9 +110,9 @@
             </div>
         </section>
 
-        <section id="servicos" style="background: rgba(17, 26, 46, 0.3); padding: 60px 0;">
+        <section id="servicos" style="background: rgba(17, 26, 46, 0.3); padding: 80px 0;">
             <div class="container">
-                <div class="reveal" style="text-align: center; margin-bottom: 40px;">
+                <div class="reveal" style="text-align: center; margin-bottom: 50px;">
                     <span class="badge">Especialidades</span>
                     <h2>O que eu <span class="highlight">Entrego</span></h2>
                 </div>
@@ -105,50 +137,53 @@
         </section>
 
         <section id="projetos" class="container">
-            <div class="reveal" style="text-align: center; margin-bottom: 40px;">
-                <span class="badge">Portfólio</span>
-                <h2>Projetos em <span class="highlight">Destaque</span></h2>
+            <div class="reveal" style="text-align: center; margin-bottom: 50px;">
+                <span class="badge">Destaques</span>
+                <h2>Galeria de <span class="highlight">Projetos</span></h2>
             </div>
             <div class="grid-projetos">
                 <article class="card-projeto reveal">
-                    <img src="img/gerador de contrato.jpeg" alt="Contratos" loading="lazy">
+                    <img src="img/gerador de contrato.jpeg" alt="Contratos">
                     <div class="conteudo-projeto">
                         <h3>Gerador de Contrato</h3>
                         <div class="tecnologias"><span>JS</span><span>PDF Lib</span></div>
                         <div class="botoes-projeto">
                             <a href="https://aw-contract-generator.vercel.app/" target="_blank" class="btn-card-p">Online</a>
+                            <a href="https://github.com/awaldige/contract-generator" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </article>
                 <article class="card-projeto reveal">
-                    <img src="img/automanager-pro.jpg" alt="ERP" loading="lazy">
+                    <img src="img/automanager-pro.jpg" alt="ERP">
                     <div class="conteudo-projeto">
                         <h3>AutoManager Pro</h3>
                         <div class="tecnologias"><span>PHP 8</span><span>MySQL</span></div>
                         <div class="botoes-projeto">
                             <a href="https://awaldige.infinityfree.me/vendascarros/" target="_blank" class="btn-card-p">Online</a>
+                            <a href="https://github.com/awaldige/AutoManagerPro" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </article>
                 <article class="card-projeto reveal">
-                    <img src="img/sistema_agendamento.jpeg" alt="Agendamento" loading="lazy">
+                    <img src="img/sistema_agendamento.jpeg" alt="Agendamento">
                     <div class="conteudo-projeto">
                         <h3>Agendamento Tech</h3>
                         <div class="tecnologias"><span>PHP</span><span>MySQL</span></div>
                         <div class="botoes-projeto">
                             <a href="https://sistema-agendamento-fm7r.onrender.com/" target="_blank" class="btn-card-p">Online</a>
+                            <a href="https://github.com/awaldige/sistema_agendamento" target="_blank" class="btn-card-s"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </article>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
+            <div style="text-align: center; margin-top: 50px;">
                 <a href="projetos.html" class="btn-secundario">Ver Galeria Completa</a>
             </div>
         </section>
 
-        <section id="competencias" style="background: rgba(17, 26, 46, 0.3); padding: 60px 0;">
+        <section id="competencias" style="background: rgba(17, 26, 46, 0.3); padding: 80px 0;">
             <div class="container">
-                <div class="reveal" style="text-align: center; margin-bottom: 40px;">
+                <div class="reveal" style="text-align: center; margin-bottom: 50px;">
                     <span class="badge">Habilidades</span>
                     <h2>Minha <span class="highlight">Stack Técnica</span></h2>
                 </div>
@@ -168,6 +203,7 @@
                         <ul>
                             <li><i class="fas fa-check"></i> PHP 8 (PDO/MySQL)</li>
                             <li><i class="fas fa-check"></i> Node.js</li>
+                            <li><i class="fas fa-check"></i> APIs RESTful</li>
                         </ul>
                     </div>
                     <div class="card-competencia reveal">
@@ -186,33 +222,38 @@
             <div class="contato-form">
                 <h2>Vamos <span class="highlight">Conversar?</span></h2>
                 <form action="https://formsubmit.co/seuemail@email.com" method="POST">
-                    <input type="text" name="name" placeholder="Nome" required>
-                    <input type="email" name="email" placeholder="E-mail" required>
-                    <textarea name="message" placeholder="Mensagem" rows="4" required></textarea>
-                    <button type="submit" class="btn-primario">Enviar</button>
+                    <input type="text" name="nome" placeholder="Seu Nome" required>
+                    <input type="email" name="email" placeholder="Seu E-mail" required>
+                    <textarea name="mensagem" rows="5" placeholder="Como posso ajudar?" required></textarea>
+                    <button type="submit" class="btn-primario" style="width: 100%;">Enviar Mensagem</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <footer>
+        <div class="container footer-ultra-minimal">
+            <p>&copy; 2026 André Waldige | Dev Full Stack</p>
+            <div class="footer-links">
+                <a href="https://github.com/awaldige" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/awaldige780606/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511999999999" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // Correção de altura para Mobile (evita o balanço da barra de endereços)
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-        // Loader
+        // Scripts para Android e Reveal
         window.addEventListener('load', () => {
             setTimeout(() => {
-                document.getElementById('loader').style.opacity = '0';
-                setTimeout(() => document.getElementById('loader').style.display = 'none', 500);
-            }, 1500);
+                const loader = document.getElementById('loader');
+                loader.classList.add('loader-hidden');
+            }, 2500); // Tempo para a animação de escrita terminar
         });
 
-        // Menu Mobile
         const btn = document.querySelector('.mobile-menu-btn');
         const menu = document.querySelector('.nav-menu');
         btn.addEventListener('click', () => {
@@ -221,7 +262,6 @@
             btn.querySelector('i').classList.toggle('fa-times');
         });
 
-        // Reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
         }, { threshold: 0.1 });
