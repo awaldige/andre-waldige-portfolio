@@ -10,6 +10,8 @@
 html { 
     scroll-behavior: smooth; 
     font-size: 16px; 
+    /* Evita saltos de layout durante o scroll */
+    overflow-x: hidden;
 }
 
 body {
@@ -17,7 +19,11 @@ body {
     background-color: #0b1121; 
     color: #e2e8f0;
     line-height: 1.6; 
+    /* TRAVA DE SEGURANÇA: Impede balanço lateral no Android/Chrome */
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container { 
@@ -105,8 +111,9 @@ strong { color: #10b981; }
    ========================================= */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
     transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1);
+    will-change: transform, opacity;
 }
 
 .reveal.active {
@@ -125,6 +132,7 @@ header {
     z-index: 1000;
     border-bottom: 1px solid rgba(16, 185, 129, 0.1);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .header-content { 
@@ -161,7 +169,7 @@ header {
    5. HERO & BOTÕES
    ========================================= */
 .hero { 
-    padding: 130px 0; 
+    padding: clamp(80px, 15vh, 130px) 0; 
     text-align: center; 
     background: radial-gradient(circle at center, #112a28 0%, #0b1121 100%); 
 }
@@ -182,12 +190,13 @@ header {
     font-size: clamp(2.2rem, 6vw, 4rem); 
     margin-bottom: 25px; 
     color: #fff; 
+    line-height: 1.1;
 }
 
 .hero p { 
     max-width: 700px; 
     margin: 0 auto 50px; 
-    font-size: 1.25rem; 
+    font-size: clamp(1rem, 4vw, 1.25rem); 
     color: #94a3b8; 
 }
 
@@ -202,6 +211,7 @@ header {
     transition: 0.3s;
     cursor: pointer;
     gap: 10px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primario { 
@@ -229,12 +239,12 @@ header {
 /* =========================================
    6. SEÇÕES: SOBRE & SERVIÇOS
    ========================================= */
-section { padding: 100px 0; }
+section { padding: 80px 0; }
 
 .sobre-container { 
     display: grid; 
     grid-template-columns: 1fr 2fr; 
-    gap: 60px; 
+    gap: clamp(30px, 5vw, 60px); 
     align-items: center; 
 }
 
@@ -244,6 +254,7 @@ section { padding: 100px 0; }
     border-radius: 24px; 
     border: 2px solid rgba(16, 185, 129, 0.2); 
     padding: 10px; 
+    display: block;
 }
 
 .grid-servicos { 
@@ -273,8 +284,8 @@ section { padding: 100px 0; }
    ========================================= */
 .grid-projetos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
 
 .card-projeto {
@@ -288,7 +299,7 @@ section { padding: 100px 0; }
 }
 
 .card-projeto:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     border-color: rgba(16, 185, 129, 0.3);
 }
 
@@ -348,7 +359,7 @@ section { padding: 100px 0; }
 .grid-competencias {
     display: grid;
     gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .card-competencia {
@@ -372,15 +383,15 @@ section { padding: 100px 0; }
 }
 
 .card-competencia ul { list-style: none; }
-.card-competencia ul li { margin-bottom: 10px; color: #94a3b8; }
-.card-competencia ul li i { color: #10b981; margin-right: 8px; }
+.card-competencia ul li { margin-bottom: 10px; color: #94a3b8; display: flex; align-items: center; }
+.card-competencia ul li i { color: #10b981; margin-right: 10px; font-size: 1rem; }
 
 /* =========================================
    9. CONTATO & FORM
    ========================================= */
 .contato-form { 
     background: #111a2e; 
-    padding: 40px; 
+    padding: clamp(20px, 5vw, 40px); 
     border-radius: 20px; 
     max-width: 600px; 
     margin: 0 auto; 
@@ -402,7 +413,7 @@ input, textarea {
 input:focus, textarea:focus { border-color: #10b981; }
 
 /* =========================================
-   10. FOOTER & WHATSAPP (PADRONIZADO)
+   10. FOOTER & WHATSAPP (OTIMIZADO)
    ========================================= */
 footer {
     background: #0b1121;
@@ -443,8 +454,8 @@ footer {
     position: fixed; 
     width: 60px; 
     height: 60px; 
-    bottom: 30px; 
-    right: 30px;
+    bottom: 25px; 
+    right: 25px; /* Recuado para evitar overflow no Android */
     background: #10b981; 
     color: white; 
     border-radius: 50%;
@@ -454,12 +465,13 @@ footer {
     font-size: 30px; 
     z-index: 2000; 
     text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
     animation: pulse-green 2s infinite; 
 }
 
 @keyframes pulse-green {
     0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+    70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); } /* Reduzido alcance da sombra */
     100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
@@ -473,6 +485,7 @@ footer {
     color: #fff;
     font-size: 1.5rem;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 @media (max-width: 768px) {
@@ -486,16 +499,28 @@ footer {
         height: 100vh;
         background: #0b1121;
         padding: 100px 40px;
-        transition: 0.4s;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1050;
         box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        visibility: hidden; /* CORREÇÃO: Remove o menu do cálculo de largura enquanto oculto */
     }
 
-    .nav-menu.active { right: 0; }
+    .nav-menu.active { 
+        right: 0; 
+        visibility: visible;
+    }
+
     .nav-menu ul { flex-direction: column; gap: 30px; }
 
-    .sobre-container { grid-template-columns: 1fr; text-align: center; }
+    .sobre-container { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        gap: 40px;
+    }
+
     .sobre-foto { margin: 0 auto; }
+    
+    .hero { padding: 80px 0; }
     .hero h2 { font-size: 2.2rem; }
     
     .footer-ultra-minimal {
@@ -503,4 +528,17 @@ footer {
         text-align: center;
         justify-content: center;
     }
+
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Garante que imagens e tabelas não quebrem o layout horizontal */
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
 }
