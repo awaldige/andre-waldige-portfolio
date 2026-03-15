@@ -24,45 +24,6 @@
     
     <link rel="stylesheet" href="css/style.css">
 
-    <style>
-        /* CORREÇÃO PARA ANDROID & BOTÕES LADO A LADO */
-        html, body { 
-            overflow-x: hidden; 
-            width: 100%; 
-            position: relative;
-        }
-
-        /* Força botões lado a lado no Android/iOS */
-        .hero-buttons {
-            display: flex !important;
-            flex-direction: row !important;
-            flex-wrap: nowrap !important;
-            gap: 10px !important;
-            justify-content: center !important;
-            width: 100% !important;
-            max-width: 400px;
-            margin: 30px auto 0 !important;
-        }
-
-        .hero-buttons a {
-            flex: 1 !important;
-            white-space: nowrap !important;
-            font-size: 0.9rem !important;
-            padding: 12px 5px !important;
-            text-align: center !important;
-        }
-
-        /* Ajuste do Loader para 10 segundos */
-        .progress-fill-loader {
-            animation: loadProgress 10s linear forwards !important;
-        }
-        @keyframes loadProgress { to { width: 100%; } }
-
-        @media (max-width: 380px) {
-            .hero-buttons a { font-size: 0.8rem !important; }
-        }
-    </style>
-
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
@@ -74,7 +35,7 @@
             <div class="progress-bar-loader">
                 <div class="progress-fill-loader"></div>
             </div>
-            <span class="status-loader">Iniciando Laboratório...</span>
+            <span class="status-loader" id="status-text">Iniciando Laboratório...</span>
         </div>
     </div>
 
@@ -177,15 +138,10 @@
                         <div class="conteudo-projeto">
                             <h3>Nexus Task</h3>
                             <p>Gerenciador de tarefas avançado com arquitetura robusta, interface intuitiva e foco em performance para gestão de fluxos de trabalho.</p>
-                            <div class="tecnologias">
-                                <span>React</span>
-                                <span>TypeScript</span>
-                                <span>Tailwind CSS</span>
-                            </div>
+                            <div class="tecnologias"><span>React</span><span>TypeScript</span><span>Tailwind CSS</span></div>
                             <div class="botoes-projeto">
                                 <a href="https://nexus-tasker.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/Nexus-Task" target="_blank" class="btn-card-s">
-                                    <i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://github.com/awaldige/Nexus-Task" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
                             </div>
                         </div>
                     </article>
@@ -241,7 +197,6 @@
                             </div>
                         </div>
                     </article>
-
                 </div>
 
                 <div style="text-align:center; margin-top:50px;">
@@ -298,7 +253,6 @@
                     <textarea name="mensagem" rows="5" placeholder="Como posso ajudar seu projeto?" required></textarea>
                     
                     <input type="text" name="_gotcha" style="display:none">
-                    
                     <button type="submit" class="btn-primario" style="width: 100%; cursor: pointer;">Enviar Mensagem</button>
                 </form>
             </div>
@@ -309,7 +263,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
- <footer>
+    <footer>
         <div class="container footer-ultra-minimal">
             <p>&copy; 2026 André Waldige | Desenvolvedor Full Stack</p>
             <div class="footer-links">
@@ -320,16 +274,35 @@
     </footer>
 
     <script>
-        // Controle do Loader (10 Segundos conforme pedido anteriormente)
+        // CONTROLE DO LOADER DINÂMICO (10 SEGUNDOS)
         window.addEventListener("load", () => {
             const loader = document.getElementById("loader");
+            const statusText = document.getElementById("status-text");
+            
+            const mensagens = [
+                "Iniciando Laboratório...",
+                "Configurando stack Node.js...",
+                "Otimizando performance mobile...",
+                "Compilando projetos Full Stack...",
+                "Finalizando ambiente..."
+            ];
+            
+            let m = 0;
+            const mudaTexto = setInterval(() => {
+                if (m < mensagens.length) {
+                    statusText.innerText = mensagens[m];
+                    m++;
+                }
+            }, 2000); 
+
             setTimeout(() => {
+                clearInterval(mudaTexto);
                 loader.classList.add("loader-hidden");
                 setTimeout(reveal, 400); 
-            }, 10000); // 10 Segundos
+            }, 10000); 
         });
 
-        // Animação Reveal ao dar Scroll
+        // REVEAL AO DAR SCROLL
         function reveal() {
             const reveals = document.querySelectorAll(".reveal");
             for (let i = 0; i < reveals.length; i++) {
@@ -342,7 +315,7 @@
         }
         window.addEventListener("scroll", reveal);
 
-        // Menu Mobile
+        // MENU MOBILE
         const menuBtn = document.querySelector('.mobile-menu-btn');
         const navMenu = document.querySelector('.nav-menu');
         const menuLinks = document.querySelectorAll('.nav-menu a');
