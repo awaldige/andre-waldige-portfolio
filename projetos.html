@@ -7,8 +7,6 @@
     <meta name="description" content="Exploração detalhada de projetos desenvolvidos por André Waldige, focados em soluções Full Stack, automação e performance.">
     
     <meta name="theme-color" content="#10b981">
-    <link rel="manifest" href="manifest.json">
-
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://andre-waldige.vercel.app/projetos.html">
     <meta property="og:title" content="Galeria de Projetos | André Waldige">
@@ -50,7 +48,7 @@
     </header>
 
     <main>
-        <section class="hero" style="padding: 120px 0 60px 0;">
+        <section class="hero">
             <div class="container">
                 <span class="badge">Laboratório de Soluções</span>
                 <h2>Galeria de <span class="highlight">Projetos</span></h2>
@@ -60,10 +58,10 @@
 
         <section class="projetos">
             <div class="container">
-                <div class="grid-projetos grid-galeria" id="galeria">
+                <div class="grid-projetos" id="galeria">
 
-                    <article class="card-projeto">
-                        <img src="img/gerador de contrato.jpeg" alt="Gerador de Contrato" loading="lazy">
+                    <article class="card-projeto reveal">
+                        <img src="img/gerador de contrato.jpeg" alt="Interface do Gerador de Contrato" width="400" height="200" loading="lazy">
                         <div class="conteudo-projeto">
                             <h3>Gerador de Contrato</h3>
                             <p>Automação de documentos jurídicos com preenchimento dinâmico de campos e exportação otimizada para produtividade administrativa.</p>
@@ -75,8 +73,8 @@
                         </div>
                     </article>
 
-                    <article class="card-projeto">
-                        <img src="img/dashboard-demo.jpg" alt="Dashboard Demonstração" loading="lazy">
+                    <article class="card-projeto reveal">
+                        <img src="img/dashboard-demo.jpg" alt="Dashboard de análise de dados" width="400" height="200" loading="lazy">
                         <div class="conteudo-projeto">
                             <h3>Dashboard Admin</h3>
                             <p>Painel de monitoramento interativo com visualização de métricas em tempo real, focado em análise de dados e performance empresarial.</p>
@@ -88,8 +86,8 @@
                         </div>
                     </article>
 
-                    <article class="card-projeto">
-                        <img src="img/gerador-orcamento.jpg" alt="Gerador de Orçamento" loading="lazy">
+                    <article class="card-projeto reveal">
+                        <img src="img/gerador-orcamento.jpg" alt="Ferramenta de orçamentos" width="400" height="200" loading="lazy">
                         <div class="conteudo-projeto">
                             <h3>Gerador de Orçamento</h3>
                             <p>Ferramenta para criação rápida de propostas comerciais com cálculos automáticos de taxas e interface intuitiva para vendas.</p>
@@ -101,8 +99,8 @@
                         </div>
                     </article>
 
-                    <article class="card-projeto">
-                        <img src="img/gerador-holerite.jpg" alt="Gerador de Holerite" loading="lazy">
+                    <article class="card-projeto reveal">
+                        <img src="img/gerador-holerite.jpg" alt="Sistema de Folha de Pagamento" width="400" height="200" loading="lazy">
                         <div class="conteudo-projeto">
                             <h3>Gerador de Holerite</h3>
                             <p>Sistema de cálculo de folha de pagamento processando proventos e descontos (INSS/IRRF) conforme a legislação vigente.</p>
@@ -114,8 +112,8 @@
                         </div>
                     </article>
 
-                    <article class="card-projeto">
-                        <img src="img/loteria caixa.jpeg" alt="Loterias Caixa" loading="lazy">
+                    <article class="card-projeto reveal">
+                        <img src="img/loteria caixa.jpeg" alt="Consulta de Loterias" width="400" height="200" loading="lazy">
                         <div class="conteudo-projeto">
                             <h3>Resultados Loterias</h3>
                             <p>Interface de utilidade pública que consome APIs oficiais para exibição instantânea de resultados e estatísticas de sorteios.</p>
@@ -127,8 +125,8 @@
                         </div>
                     </article>
 
-                    <article class="card-projeto">
-                        <img src="img/bibliotech.jpeg" alt="Sistema BiblioTech" loading="lazy">
+                    <article class="card-projeto reveal">
+                        <img src="img/bibliotech.jpeg" alt="Gestão Bibliotecária" width="400" height="200" loading="lazy">
                         <div class="conteudo-projeto">
                             <h3>Sistema BiblioTech</h3>
                             <p>Ecossistema administrativo para gestão de acervos bibliotecários, com controle de empréstimos e banco de dados relacional.</p>
@@ -139,39 +137,41 @@
                             </div>
                         </div>
                     </article>
-<article class="card-projeto">
-    <img src="img/automanager-pro.jpg" alt="AutoManager Pro" loading="lazy">
-    <div class="conteudo-projeto">
-        <h3>AutoManager Pro</h3>
-        <p>Sistema ERP para gestão automotiva, integrando controle de estoque de veículos, fluxo de vendas e acompanhamento de revisões técnicas em uma interface centralizada.</p>
-        <div class="tecnologias"><span>PHP 8</span><span>MySQL</span><span>Dashboard</span></div>
-        <div class="botoes-projeto">      
-            <a href="https://awaldige.infinityfree.me/vendascarros/" target="_blank" class="btn-card-p">Online</a>
-            <a href="https://github.com/awaldige/AutoManagerPro" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-    </div>
-</article>
 
-                   <article class="card-projeto">
-    <img src="img/sistema_agendamento.jpeg" alt="Sistema de Agendamento" loading="lazy">
-    <div class="conteudo-projeto">
-        <h3>Agendamento Tech</h3>
-        <p>Solução escalável para marcação de horários, eliminando conflitos de agenda e organizando fluxos de atendimento profissional.</p>
-        
-        <div class="acesso-demo" style="background: rgba(0,0,0,0.05); padding: 8px; border-radius: 8px; margin: 10px 0; font-size: 0.85rem; border-left: 4px solid #2ecc71;">
-            <i class="fas fa-lock-open"></i> <strong>Acesso para teste:</strong><br>
-            <span>Usuário: <code>user</code> | Senha: <code>123456</code></span>
-        </div>
+                    <article class="card-projeto reveal">
+                        <img src="img/automanager-pro.jpg" alt="ERP Automotivo" width="400" height="200" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <h3>AutoManager Pro</h3>
+                            <p>Sistema ERP para gestão automotiva, integrando controle de estoque de veículos, fluxo de vendas e acompanhamento de revisões técnicas.</p>
+                            <div class="tecnologias"><span>PHP 8</span><span>MySQL</span><span>Dashboard</span></div>
+                            <div class="botoes-projeto">      
+                                <a href="https://awaldige.infinityfree.me/vendascarros/" target="_blank" class="btn-card-p">Online</a>
+                                <a href="https://github.com/awaldige/AutoManagerPro" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
 
-        <div class="tecnologias"><span>PHP</span><span>PDO SQL</span></div>
-        <div class="botoes-projeto">
-            <a href="https://sistema-agendamento-fm7r.onrender.com/" target="_blank" class="btn-card-p">Online</a>
-            <a href="https://github.com/awaldige/sistema_agendamento" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-    </div>
-</article>
-                    <article class="card-projeto">
-                        <img src="img/pizzaria.jpeg" alt="Cardápio Pizzaria" loading="lazy">
+                    <article class="card-projeto reveal">
+                        <img src="img/sistema_agendamento.jpeg" alt="Interface de Agendamento" width="400" height="200" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <h3>Agendamento Tech</h3>
+                            <p>Solução escalável para marcação de horários, eliminando conflitos de agenda e organizando fluxos de atendimento profissional.</p>
+                            
+                            <div style="background: rgba(16, 185, 129, 0.05); padding: 12px; border-radius: 8px; margin: 10px 0; font-size: 0.85rem; border-left: 4px solid #10b981; color: #94a3b8;">
+                                <i class="fas fa-lock-open" style="color: #10b981;"></i> <strong style="color: #e2e8f0;">Acesso para teste:</strong><br>
+                                <span>Usuário: <code>user</code> | Senha: <code>123456</code></span>
+                            </div>
+
+                            <div class="tecnologias"><span>PHP</span><span>PDO SQL</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://sistema-agendamento-fm7r.onrender.com/" target="_blank" class="btn-card-p">Online</a>
+                                <a href="https://github.com/awaldige/sistema_agendamento" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card-projeto reveal">
+                        <img src="img/pizzaria.jpeg" alt="Sistema de Pedidos Online" width="400" height="200" loading="lazy">
                         <div class="conteudo-projeto">
                             <h3>Cardápio Pizzaria</h3>
                             <p>Sistema de pedidos interativo com carrinho em tempo real e envio automatizado de pedidos via integração com WhatsApp.</p>
@@ -179,45 +179,6 @@
                             <div class="botoes-projeto">      
                                 <a href="https://cardapio-pizzaria-aw.vercel.app/" target="_blank" class="btn-card-p">Online</a>
                                 <a href="https://github.com/awaldige/Cardapio-Pizzaria-AW" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card-projeto">
-                        <img src="img/calatogo.jpeg" alt="Catálogo Online" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>Catálogo Online</h3>
-                            <p>Aplicação moderna para exibição de produtos com gerenciamento dinâmico via NoSQL, priorizando performance e escalabilidade.</p>
-                            <div class="tecnologias"><span>Node.js</span><span>MongoDB</span></div>
-                            <div class="botoes-projeto">      
-                                <a href="https://catalogo-online-seven.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/catalogo-online" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card-projeto">
-                        <img src="img/clinica-quiro.jpg" alt="Clínica de Quiropraxia" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>Clínica Quiropraxia</h3>
-                            <p>Site institucional projetado com foco em autoridade e UX, integrando canais de agendamento e informações de saúde.</p>
-                            <div class="tecnologias"><span>SEO</span><span>UX Design</span></div>
-                            <div class="botoes-projeto">      
-                                <a href="https://clinica-quiropraxia.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/clinica-quiropraxia" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card-projeto">
-                        <img src="img/calculadora-fiscal.jpg" alt="Calculadora Fiscal" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>Calculadora Fiscal</h3>
-                            <p>Ferramenta financeira de precisão para simulação de descontos em folha e planejamento tributário pessoal.</p>
-                            <div class="tecnologias"><span>JS Logic</span><span>Web Dev</span></div>
-                            <div class="botoes-projeto">      
-                                <a href="https://awaldige.github.io/calculo-de-inss-e-imposto-de-renda/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/calculo-de-inss-e-imposto-de-renda" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
                             </div>
                         </div>
                     </article>
@@ -237,22 +198,44 @@
         <div class="container footer-ultra-minimal">
             <p>&copy; 2026 André Waldige | Desenvolvedor Full Stack</p>
             <div class="footer-links">
-                <a href="https://github.com/awaldige" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/awaldige780606/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/awaldige" target="_blank" aria-label="Acessar meu GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/awaldige780606/" target="_blank" aria-label="Acessar meu LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
 
     <script>
+        // Menu Mobile
         const menuBtn = document.querySelector('.mobile-menu-btn');
         const navMenu = document.querySelector('.nav-menu');
+        const icon = menuBtn.querySelector('i');
 
         menuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            const icon = menuBtn.querySelector('i');
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
         });
+
+        // Fechar menu ao clicar em links
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Animação de Reveal no Scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
