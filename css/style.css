@@ -18,6 +18,7 @@ body {
     background-color: #0b1121; 
     color: #e2e8f0;
     line-height: 1.6; 
+    /* TRAVA ANDROID: Impede balanço lateral */
     overflow-x: hidden;
     width: 100%;
     position: relative;
@@ -40,7 +41,7 @@ body {
 strong { color: #10b981; }
 
 /* =========================================
-   2. INTRODUÇÃO ANIMADA (LOADER) - 10S
+   2. INTRODUÇÃO ANIMADA (LOADER) - AJUSTADA 10S
    ========================================= */
 #loader {
     position: fixed;
@@ -88,6 +89,7 @@ strong { color: #10b981; }
     width: 0;
     height: 100%;
     background: #10b981;
+    /* MODIFICAÇÃO: Ajustado para 10 segundos conforme pedido */
     animation: progress-load 10s linear forwards;
 }
 
@@ -164,7 +166,7 @@ header {
 .nav-menu a:hover { color: #10b981; }
 
 /* =========================================
-   5. HERO & BOTÕES
+   5. HERO & BOTÕES (CORREÇÃO ANDROID LADO A LADO)
    ========================================= */
 .hero { 
     padding: clamp(80px, 15vh, 130px) 0; 
@@ -172,13 +174,14 @@ header {
     background: radial-gradient(circle at center, #112a28 0%, #0b1121 100%); 
 }
 
+/* MODIFICAÇÃO: Hero-Buttons travados para Mobile */
 .hero-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
     margin-top: 30px;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap; /* Impede quebra de linha no Android */
     width: 100%;
 }
 
@@ -219,9 +222,9 @@ header {
     transition: 0.3s;
     cursor: pointer;
     gap: 10px;
-    flex: 1;
+    flex: 1; /* Faz os botões dividirem o espaço 50/50 */
     max-width: 180px;
-    white-space: nowrap;
+    white-space: nowrap; /* Impede texto em duas linhas */
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -248,10 +251,51 @@ header {
 }
 
 /* =========================================
-   6. SEÇÕES & GRID
+   6. SEÇÕES: SOBRE & SERVIÇOS
    ========================================= */
 section { padding: 80px 0; }
 
+.sobre-container { 
+    display: grid; 
+    grid-template-columns: 1fr 2fr; 
+    gap: clamp(30px, 5vw, 60px); 
+    align-items: center; 
+}
+
+.sobre-foto { 
+    width: 100%; 
+    max-width: 350px; 
+    border-radius: 24px; 
+    border: 2px solid rgba(16, 185, 129, 0.2); 
+    padding: 10px; 
+    display: block;
+}
+
+.grid-servicos { 
+    display: grid; 
+    gap: 30px; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+}
+
+.card-servico { 
+    background: #111a2e; 
+    padding: 40px; 
+    border-radius: 20px; 
+    border: 1px solid rgba(148, 163, 184, 0.08); 
+    text-align: center; 
+    transition: 0.3s;
+}
+
+.card-servico i { 
+    font-size: 3rem; 
+    color: #10b981; 
+    margin-bottom: 20px; 
+    display: block; 
+}
+
+/* =========================================
+   7. GRID DE PROJETOS
+   ========================================= */
 .grid-projetos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -286,40 +330,6 @@ section { padding: 80px 0; }
     flex-direction: column; 
 }
 
-/* =========================================
-   7. ACESSO DE TESTE (NOVO)
-   ========================================= */
-.acesso-teste {
-    font-size: 0.8rem;
-    background: rgba(30, 41, 59, 0.4);
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    border-left: 3px solid #10b981;
-    color: #94a3b8;
-}
-
-.acesso-teste strong {
-    display: block;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-}
-
-.acesso-teste span { display: block; margin-top: 2px; }
-
-.acesso-teste code {
-    background: #0b1121;
-    padding: 1px 5px;
-    border-radius: 4px;
-    color: #fff;
-    font-family: monospace;
-}
-
-/* =========================================
-   8. TECNOLOGIAS & BOTÕES DO CARD
-   ========================================= */
 .tecnologias { 
     display: flex; 
     flex-wrap: wrap; 
@@ -358,9 +368,176 @@ section { padding: 80px 0; }
 .btn-card-s:hover { border-color: #10b981; color: #10b981; }
 
 /* =========================================
-   9. RESPONSIVIDADE
+   8. COMPETÊNCIAS
    ========================================= */
+.grid-competencias {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card-competencia {
+    background: #111a2e;
+    padding: 35px 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    transition: 0.3s ease;
+}
+
+.card-competencia:hover {
+    transform: translateY(-8px);
+    border-color: #10b981;
+}
+
+.card-competencia i.fas, .card-competencia i.fab {
+    font-size: 2.2rem;
+    color: #10b981;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.card-competencia ul { list-style: none; }
+.card-competencia ul li { margin-bottom: 10px; color: #94a3b8; display: flex; align-items: center; }
+.card-competencia ul li i { color: #10b981; margin-right: 10px; font-size: 1rem; }
+
+/* =========================================
+   9. CONTATO & FORM
+   ========================================= */
+.contato-form { 
+    background: #111a2e; 
+    padding: clamp(20px, 5vw, 40px); 
+    border-radius: 20px; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+input, textarea { 
+    width: 100%; 
+    padding: 15px; 
+    margin-bottom: 20px; 
+    background: #0b1121; 
+    border: 1px solid #1e293b; 
+    color: #fff; 
+    border-radius: 8px; 
+    font-family: inherit;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus { border-color: #10b981; }
+
+/* =========================================
+   10. FOOTER & WHATSAPP
+   ========================================= */
+footer {
+    background: #0b1121;
+    padding: 40px 0;
+    border-top: 1px solid rgba(148, 163, 184, 0.05);
+}
+
+.footer-ultra-minimal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-ultra-minimal p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    font-size: 1.3rem;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #10b981;
+    transform: translateY(-3px);
+}
+
+.whatsapp-float {
+    position: fixed; 
+    width: 60px; 
+    height: 60px; 
+    bottom: 25px; 
+    right: 25px; 
+    background: #10b981; 
+    color: white; 
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 30px; 
+    z-index: 2000; 
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    animation: pulse-green 2s infinite; 
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); } 
+    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* =========================================
+   11. RESPONSIVIDADE & MENU MOBILE
+   ========================================= */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
 @media (max-width: 768px) {
+    .mobile-menu-btn { display: block; }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: #0b1121;
+        padding: 100px 40px;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1050;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        visibility: hidden; 
+    }
+
+    .nav-menu.active { 
+        right: 0; 
+        visibility: visible;
+    }
+
+    .nav-menu ul { flex-direction: column; gap: 30px; }
+
+    .sobre-container { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
+        gap: 40px;
+    }
+
+    .sobre-foto { margin: 0 auto; }
+    
+    .hero { padding: 60px 0; }
+    .hero h2 { font-size: 2.2rem; }
+
+    /* Força os botões da Hero a ficarem lado a lado mesmo em telas menores */
     .hero-buttons {
         flex-direction: row !important;
         gap: 8px;
@@ -369,4 +546,23 @@ section { padding: 80px 0; }
         font-size: 0.85rem;
         padding: 12px 10px;
     }
+    
+    .footer-ultra-minimal {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Garante que imagens não quebrem o layout */
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
 }
