@@ -3,312 +3,542 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projetos | André Waldige</title>
-    <meta name="description" content="Exploração detalhada de projetos desenvolvidos por André Waldige, focados em soluções Full Stack, automação e performance.">
-    
+    <title>Projetos | André Waldige — AW TECHNOLOGY</title>
+    <meta name="description" content="Explore 30 projetos de André Waldige: sistemas web, e-commerce, gestão, dashboards, landing pages e ferramentas digitais.">
     <meta name="theme-color" content="#10b981">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://andre-waldige.vercel.app/projetos.html">
     <meta property="og:title" content="Galeria de Projetos | André Waldige">
-    <meta property="og:description" content="Confira meu laboratório de sistemas: automações, APIs e interfaces modernas.">
-    <meta property="og:image" content="https://andre-waldige.vercel.app/img/banner-share.jpg">
-
+    <meta property="og:description" content="Conheça projetos de sistemas web, lojas virtuais, gestão e ferramentas digitais desenvolvidos por AW TECHNOLOGY.">
+    <meta property="og:image" content="https://andre-waldige.vercel.app/img/banner-share.jpeg">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-
     <header>
         <div class="container header-content">
-            <h1 class="logo">André<span>.</span>Waldige</h1>
-            
-            <button class="mobile-menu-btn" aria-label="Abrir Menu">
-                <i class="fas fa-bars"></i>
+            <a class="logo" href="index.html" aria-label="Voltar para o início">André<span>.</span>Waldige</a>
+            <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
-
-            <nav class="nav-menu" aria-label="Navegação secundária">
+            <nav class="nav-menu" id="menu-principal" aria-label="Navegação principal">
                 <ul>
                     <li><a href="index.html#sobre">Sobre</a></li>
                     <li><a href="index.html#servicos">Serviços</a></li>
-                    <li><a href="index.html#projetos">Projetos</a></li>
+                    <li><a href="index.html#projetos">Destaques</a></li>
                     <li><a href="index.html#competencias">Stack</a></li>
-                    <li><a href="#contato-footer">Contato</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
     <main>
-        <section class="hero">
+        <section class="hero gallery-hero">
             <div class="container">
-                <span class="badge">Laboratório de Soluções</span>
-                <h2>Galeria de <span class="highlight">Projetos</span></h2>
-                <p>Uma coleção de sistemas funcionais desenvolvidos para resolver problemas de automação, gestão e experiência digital.</p>
+                <span class="badge">AW TECHNOLOGY · Portfólio</span>
+                <h2>Projetos em <span class="highlight">destaque</span></h2>
+                <p>Uma seleção de soluções digitais desenvolvidas para diferentes necessidades: presença online, vendas, gestão e produtividade.</p>
+                <div class="gallery-summary"><strong id="total-projetos">30 projetos</strong><span> · </span><span>Projetos demonstrativos e estudos de caso</span></div>
             </div>
         </section>
-
-        <section class="projetos">
+        <section class="projetos gallery-section">
             <div class="container">
-                <div class="grid-projetos" id="galeria">
-
-                    <!-- Projeto 01 -->
-                    <article class="card-projeto reveal">
-                        <img src="img/gerador de contrato.jpeg" alt="Interface do Gerador de Contrato" width="400" height="200" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>Gerador de Contrato</h3>
-                            <p>Automação de documentos jurídicos com preenchimento dinâmico de campos e exportação otimizada para produtividade administrativa.</p>
-                            <div class="tecnologias"><span>JavaScript</span><span>PDF Lib</span></div>
-                            <div class="botoes-projeto">      
-                                <a href="https://aw-contract-generator.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/contract-generator" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projeto 02 -->
-                   <article class="card-projeto reveal">
-    <img src="img/aw-showcase.jpg" alt="AW Showcase - Vitrine online de produtos" width="400" height="200" loading="lazy">
-
-    <div class="conteudo-projeto">
-        <h3>AW Showcase</h3>
-
-        <p>
-            Vitrine online responsiva de produtos, desenvolvida para apresentação
-            e gerenciamento de produtos, com integração entre frontend, API e banco de dados.
-        </p>
-
-        <div class="tecnologias">
-            <span>Next.js</span>
-            <span>Node.js</span>
-            <span>PostgreSQL</span>
-            <span>Prisma</span>
-        </div>
-
-        <div class="botoes-projeto">
-            <a href="https://aw-showcase.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">
-                Online
-            </a>
-
-            <a href="https://github.com/awaldige/aw-showcase" target="_blank" rel="noopener noreferrer" class="btn-card-s">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-        </div>
-    </div>
-</article>
-                    <!-- Projeto 03 -->
-                    <article class="card-projeto">
-                        <img src="img/filmes&series.jpeg" alt="Pesquisa de Filmes e Séries" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>Filmes & Séries</h3>
-                            <p>Catálogo interativo para busca global de títulos, consumindo APIs REST para exibição dinâmica de detalhes e avaliações.</p>
-                            <div class="tecnologias"><span>REST API</span><span>JavaScript</span><span>CSS3</span></div>
-                            <div class="botoes-projeto">
-                                <a href="https://pesquisa-de-filmes-e-serie.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/Pesquisa-de-filmes-e-serie" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projeto 04 -->
-                    <article class="card-projeto reveal">
-                        <img src="img/gerador-holerite.jpg" alt="Sistema de Folha de Pagamento" width="400" height="200" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>Gerador de Holerite</h3>
-                            <p>Sistema de cálculo de folha de pagamento processando proventos e descontos (INSS/IRRF) conforme a legislação vigente.</p>
-                            <div class="tecnologias"><span>Math Logic</span><span>RH Tech</span></div>
-                            <div class="botoes-projeto">      
-                                <a href="https://gerador-de-holerite.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/Gerador-de-Holerite" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projeto 05 -->
-                    <article class="card-projeto reveal">
-                        <img src="img/loteria caixa.jpeg" alt="Consulta de Loterias" width="400" height="200" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>Resultados Loterias</h3>
-                            <p>Interface de utilidade pública que consome APIs oficiais para exibição instantânea de resultados e estatísticas de sorteios.</p>
-                            <div class="tecnologias"><span>Fetch API</span><span>JSON</span></div>
-                            <div class="botoes-projeto">      
-                                <a href="https://loterias-caixas.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/Loterias-Caixas" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projeto 06 -->
-                    <article class="card-projeto reveal">
-                        <img src="img/bibliotech.jpeg" alt="Gestão Bibliotecária" width="400" height="200" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>Sistema BiblioTech</h3>
-                            <p>Ecossistema administrativo para gestão de acervos bibliotecários, com controle de empréstimos e banco de dados relacional.</p>
-                            <div class="tecnologias"><span>PHP 8</span><span>MySQL</span></div>
-                            <div class="botoes-projeto">      
-                                <a href="https://awaldige.infinityfree.me/bibliotech/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/bibliotech" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projeto 07 -->
-                    <article class="card-projeto reveal">
-                        <img src="img/automanager-pro.jpg" alt="ERP Automotivo" width="400" height="200" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>AutoManager Pro</h3>
-                            <p>Sistema ERP para gestão automotiva, integrando controle de estoque de veículos, fluxo de vendas e acompanhamento de revisões técnicas.</p>
-                            <div class="tecnologias"><span>PHP 8</span><span>MySQL</span><span>Dashboard</span></div>
-                            <div class="botoes-projeto">      
-                                <a href="https://awaldige.infinityfree.me/vendascarros/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/AutoManagerPro" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projeto 08 -->
-                    <article class="card-projeto reveal">
-                        <img src="img/sistema_agendamento.jpeg" alt="Interface de Agendamento" width="400" height="200" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>Agendamento Tech</h3>
-                            <p>Solução escalável para marcação de horários, eliminando conflitos de agenda e organizando fluxos de atendimento profissional.</p>
-                            
-                            <div style="background: rgba(16, 185, 129, 0.05); padding: 12px; border-radius: 8px; margin: 10px 0; font-size: 0.85rem; border-left: 4px solid #10b981; color: #94a3b8;">
-                                <i class="fas fa-lock-open" style="color: #10b981;"></i> <strong style="color: #e2e8f0;">Acesso para teste:</strong><br>
-                                <span>Usuário: <code>user</code> | Senha: <code>123456</code></span>
-                            </div>
-
-                            <div class="tecnologias"><span>PHP</span><span>PDO SQL</span></div>
-                            <div class="botoes-projeto">
-                                <a href="https://sistema-agendamento-fm7r.onrender.com/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/sistema_agendamento" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projeto 09 -->
-                    <article class="card-projeto reveal">
-                        <img src="img/pizzaria.jpeg" alt="Sistema de Pedidos Online" width="400" height="200" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>Cardápio Pizzaria</h3>
-                            <p>Sistema de pedidos interativo com carrinho em tempo real e envio automatizado de pedidos via integração com WhatsApp.</p>
-                            <div class="tecnologias"><span>DOM JS</span><span>WhatsApp API</span></div>
-                            <div class="botoes-projeto">      
-                                <a href="https://cardapio-pizzaria-aw.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/Cardapio-Pizzaria-AW" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projeto 10 (Novo: Catálogo Online) -->
-                    <article class="card-projeto reveal">
-                        <img src="img/catalogo-online.jpg" alt="Catálogo Digital Interativo" width="400" height="200" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>Catálogo Online</h3>
-                            <p>Plataforma de exibição de produtos com filtros inteligentes e interface focada em conversão e experiência do usuário.</p>
-                            <div class="tecnologias"><span>HTML5</span><span>CSS3</span><span>JS</span></div>
-                            <div class="botoes-projeto">      
-                                <a href="https://catalogo-online-seven.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/catalogo-online" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projeto 11 (Novo: Clínica Quiropraxia) -->
-                    <article class="card-projeto reveal">
-                        <img src="img/clinica-quiropraxia.jpg" alt="Site de Clínica de Quiropraxia" width="400" height="200" loading="lazy">
-                        <div class="conteudo-projeto">
-                            <h3>Clínica Quiropraxia</h3>
-                            <p>Landing page profissional para serviços de saúde, otimizada para SEO e conversão de pacientes com design institucional moderno.</p>
-                            <div class="tecnologias"><span>UI/UX</span><span>Responsive</span></div>
-                            <div class="botoes-projeto">      
-                                <a href="https://clinica-quiropraxia.vercel.app/" target="_blank" class="btn-card-p">Online</a>
-                                <a href="https://github.com/awaldige/clinica-quiropraxia" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Projeto 12 (Novo: Calculadora Salário) -->
-                 <article class="card-projeto reveal">
-    <img src="img/awt-sales-manager.jpg" alt="Interface do AWT Sales Manager" width="400" height="200" loading="lazy">
-    <div class="conteudo-projeto">
-        <h3>AWT Sales Manager</h3>
-        <p>Sistema ERP Full Stack para gestão comercial completa, integrando controle de estoque, fluxo de faturamento e gerenciamento de clientes.</p>
-        
-        <div style="background: rgba(16, 185, 129, 0.05); padding: 12px; border-radius: 8px; margin: 10px 0; font-size: 0.85rem; border-left: 4px solid #10b981; color: #94a3b8;">
-            <i class="fas fa-lock-open" style="color: #10b981;"></i> <strong style="color: #e2e8f0;">Acesso para teste:</strong><br>
-            <span>E-mail: <code>usuario@email.com</code> | Senha: <code>780606</code></span>
-        </div>
-
-        <div class="tecnologias"><span>Full Stack</span><span>ERP System</span></div>
-        <div class="botoes-projeto">      
-            <a href="https://awaldige.infinityfree.me/ecommerce/login.php" target="_blank" class="btn-card-p">Online</a>
-            <a href="https://github.com/awaldige/awt-sales-manager" target="_blank" class="btn-card-s"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-    </div>
-</article>
-
+                <div class="gallery-tools">
+                    <label class="gallery-search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <span class="sr-only">Pesquisar projetos</span>
+                        <input id="project-search" type="search" placeholder="Buscar projeto ou tecnologia..." autocomplete="off">
+                    </label>
+                    <div class="gallery-filters" role="group" aria-label="Filtrar projetos por categoria">
+                        <button class="filter-btn active" type="button" data-filter="todos" aria-pressed="true">Todos <span>30</span></button>
+                        <button class="filter-btn" type="button" data-filter="sistemas" aria-pressed="false">Sistemas</button>
+                        <button class="filter-btn" type="button" data-filter="ecommerce" aria-pressed="false">E-commerce</button>
+                        <button class="filter-btn" type="button" data-filter="gestao" aria-pressed="false">Gestão</button>
+                        <button class="filter-btn" type="button" data-filter="landing" aria-pressed="false">Landing Pages</button>
+                        <button class="filter-btn" type="button" data-filter="dashboard" aria-pressed="false">Dashboards</button>
+                        <button class="filter-btn" type="button" data-filter="ferramentas" aria-pressed="false">Ferramentas</button>
+                    </div>
+                    <p class="gallery-result" id="gallery-result" aria-live="polite">Exibindo 30 de 30 projetos</p>
                 </div>
-
-                <div style="text-align:center; margin-top:60px;" id="contato-footer">
-                    <a href="index.html" class="btn-secundario">
-                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Voltar para Home
-                    </a>
+                <div class="grid-projetos gallery-grid" id="galeria">
+                    <article class="card-projeto project-card reveal" data-category="ecommerce">
+                        <img src="img/catalogo-online.jpg" alt="Captura de tela do projeto Catálogo Online" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">E-commerce</span>
+                            <h3>Catálogo Online</h3>
+                            <p>Plataforma de catálogo digital com painel administrativo para gerenciamento de produtos, categorias e imagens.</p>
+                            <div class="tecnologias"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Node.js</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://catalogo-online-seven.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/catalogo-online" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ecommerce">
+                        <img src="img/aw-showcase.jpg" alt="Captura de tela do projeto AW Showcase" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">E-commerce</span>
+                            <h3>AW Showcase</h3>
+                            <p>Vitrine online responsiva com integração entre frontend, API e banco de dados.</p>
+                            <div class="tecnologias"><span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>Prisma</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://aw-showcase.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/aw-showcase" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="gestao">
+                        <img src="img/awt-sales-manager.jpg" alt="Captura de tela do projeto AWT Sales Manager" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Gestão</span>
+                            <h3>AWT Sales Manager</h3>
+                            <p>Sistema de gestão comercial com recursos de controle de estoque, clientes e vendas.</p>
+                            <div class="tecnologias"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://awaldige.infinityfree.me/ecommerce/login.php" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/awt-sales-manager" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="sistemas">
+                        <img src="img/logixflow.png" alt="Captura de tela do projeto LogixFlow" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Sistemas</span>
+                            <h3>LogixFlow</h3>
+                            <p>Plataforma para organização de fluxos de trabalho e acompanhamento de processos.</p>
+                            <div class="tecnologias"><span>React</span><span>Node.js</span><span>TypeScript</span><span>SQL</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://logixflow.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/logixflow" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="gestao">
+                        <img src="img/fazenda-serrazul.png" alt="Captura de tela do projeto Fazenda Serra Azul" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Gestão</span>
+                            <h3>Fazenda Serra Azul</h3>
+                            <p>Sistema demonstrativo para gestão de condomínio, administração e controle de acessos.</p>
+                            <div class="tecnologias"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://fazenda-serrazul.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/fazenda-serrazul" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ecommerce">
+                        <div class="project-cover project-cover--ecommerce" role="img" aria-label="Capa ilustrativa do projeto Mimo Quatro Patas"><i class="fas fa-cart-shopping" aria-hidden="true"></i></div>
+                        <div class="conteudo-projeto">
+                            <span class="project-category">E-commerce</span>
+                            <h3>Mimo Quatro Patas</h3>
+                            <p>E-commerce demonstrativo para o segmento pet, com catálogo, carrinho, checkout e recursos administrativos.</p>
+                            <div class="tecnologias"><span>Next.js</span><span>React</span><span>Node.js</span></div>
+                            <div class="botoes-projeto">
+                                <span class="project-status">Estudo de caso</span>
+                                <a href="https://github.com/awaldige/mimo-quatro-patas" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="sistemas">
+                        <img src="img/desenhos%20antigos.jpeg" alt="Captura de tela do projeto Retro Streaming" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Sistemas</span>
+                            <h3>Retro Streaming</h3>
+                            <p>Plataforma Full Stack de catálogo de desenhos clássicos, com autenticação e gerenciamento de conteúdo.</p>
+                            <div class="tecnologias"><span>Node.js</span><span>Express</span><span>PHP</span><span>MySQL</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://streaming-desenhos-antigos.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/streaming-desenhos-antigos" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="sistemas">
+                        <img src="img/nexus-task.jpg" alt="Captura de tela do projeto Nexus Task" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Sistemas</span>
+                            <h3>Nexus Task</h3>
+                            <p>Gerenciador de tarefas com interface intuitiva e recursos para organização de fluxos de trabalho.</p>
+                            <div class="tecnologias"><span>React</span><span>TypeScript</span><span>Tailwind CSS</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://nexus-tasker.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/Nexus-Task" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ecommerce">
+                        <img src="img/loja-ebooks.jpg" alt="Captura de tela do projeto Loja de eBooks" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">E-commerce</span>
+                            <h3>Loja de eBooks</h3>
+                            <p>Loja virtual de livros digitais com filtros dinâmicos e cálculo automático do carrinho.</p>
+                            <div class="tecnologias"><span>JavaScript</span><span>HTML5</span><span>CSS3</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://lojaebooks.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/loja-ebooks-js" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ferramentas">
+                        <img src="img/gerador%20de%20contrato.jpeg" alt="Captura de tela do projeto Gerador de Contrato" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Ferramentas</span>
+                            <h3>Gerador de Contrato</h3>
+                            <p>Ferramenta para preenchimento dinâmico de dados e geração de documentos de contrato.</p>
+                            <div class="tecnologias"><span>JavaScript</span><span>PDF</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://aw-contract-generator.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/contract-generator" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ferramentas">
+                        <img src="img/filmes%26series.jpeg" alt="Captura de tela do projeto Filmes & Séries" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Ferramentas</span>
+                            <h3>Filmes & Séries</h3>
+                            <p>Aplicação de pesquisa de filmes e séries com consulta de dados por API.</p>
+                            <div class="tecnologias"><span>JavaScript</span><span>REST API</span><span>CSS3</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://pesquisa-de-filmes-e-serie.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/Pesquisa-de-filmes-e-serie" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ferramentas">
+                        <img src="img/gerador-holerite.jpg" alt="Captura de tela do projeto Gerador de Holerite" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Ferramentas</span>
+                            <h3>Gerador de Holerite</h3>
+                            <p>Ferramenta demonstrativa para cálculo e apresentação de proventos e descontos de folha de pagamento.</p>
+                            <div class="tecnologias"><span>JavaScript</span><span>HTML5</span><span>CSS3</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://gerador-de-holerite.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/Gerador-de-Holerite" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ferramentas">
+                        <img src="img/loteria%20caixa.jpeg" alt="Captura de tela do projeto Resultados Loterias" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Ferramentas</span>
+                            <h3>Resultados Loterias</h3>
+                            <p>Interface de consulta de resultados e informações de sorteios por meio de dados externos.</p>
+                            <div class="tecnologias"><span>JavaScript</span><span>Fetch API</span><span>JSON</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://loterias-caixas.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/Loterias-Caixas" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="gestao">
+                        <img src="img/bibliotech.jpeg" alt="Captura de tela do projeto Sistema BiblioTech" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Gestão</span>
+                            <h3>Sistema BiblioTech</h3>
+                            <p>Sistema para organização de acervo bibliotecário e controle de empréstimos.</p>
+                            <div class="tecnologias"><span>PHP 8</span><span>MySQL</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://awaldige.infinityfree.me/bibliotech/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/bibliotech" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="gestao">
+                        <img src="img/automanager-pro.jpg" alt="Captura de tela do projeto AutoManager Pro" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Gestão</span>
+                            <h3>AutoManager Pro</h3>
+                            <p>Sistema de gestão automotiva com controle de veículos, vendas e acompanhamento de revisões.</p>
+                            <div class="tecnologias"><span>PHP 8</span><span>MySQL</span><span>Dashboard</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://awaldige.infinityfree.me/vendascarros/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/AutoManagerPro" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="gestao">
+                        <img src="img/sistema_agendamento.jpeg" alt="Captura de tela do projeto Agendamento Tech" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Gestão</span>
+                            <h3>Agendamento Tech</h3>
+                            <p>Sistema de agendamento para organizar horários e fluxos de atendimento profissional.</p>
+                            <div class="tecnologias"><span>PHP</span><span>PDO</span><span>SQL</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://sistema-agendamento-fm7r.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/sistema_agendamento" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ecommerce">
+                        <img src="img/pizzaria.jpeg" alt="Captura de tela do projeto Cardápio Pizzaria" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">E-commerce</span>
+                            <h3>Cardápio Pizzaria</h3>
+                            <p>Cardápio digital com carrinho e encaminhamento de pedidos pelo WhatsApp.</p>
+                            <div class="tecnologias"><span>JavaScript</span><span>HTML5</span><span>CSS3</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://cardapio-pizzaria-aw.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/Cardapio-Pizzaria-AW" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="landing">
+                        <img src="img/clinica-quiropraxia.jpg" alt="Captura de tela do projeto Clínica Quiropraxia" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Landing Pages</span>
+                            <h3>Clínica Quiropraxia</h3>
+                            <p>Landing page institucional para apresentação de serviços e canais de contato.</p>
+                            <div class="tecnologias"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://clinica-quiropraxia.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/clinica-quiropraxia" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="gestao">
+                        <div class="project-cover project-cover--gestao" role="img" aria-label="Capa ilustrativa do projeto Beauty Day"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Gestão</span>
+                            <h3>Beauty Day</h3>
+                            <p>Sistema de gestão para salão de beleza com agendamentos, profissionais, serviços e painel de gestão.</p>
+                            <div class="tecnologias"><span>Next.js</span><span>React</span><span>TypeScript</span><span>MySQL</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://beauty-day-app.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/beauty-day" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="sistemas">
+                        <div class="project-cover project-cover--sistemas" role="img" aria-label="Capa ilustrativa do projeto Suprimentos B2B"><i class="fas fa-code" aria-hidden="true"></i></div>
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Sistemas</span>
+                            <h3>Suprimentos B2B</h3>
+                            <p>Plataforma corporativa para catálogo de produtos e solicitação de cotações em lote.</p>
+                            <div class="tecnologias"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://suprimentosb2b.infinityfree.me/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/suprimentos-corporativos" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="landing">
+                        <div class="project-cover project-cover--landing" role="img" aria-label="Capa ilustrativa do projeto Doce Encanto"><i class="fas fa-window-maximize" aria-hidden="true"></i></div>
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Landing Pages</span>
+                            <h3>Doce Encanto</h3>
+                            <p>Landing page demonstrativa para confeitaria, com catálogo de produtos e galeria visual.</p>
+                            <div class="tecnologias"><span>Next.js</span><span>React</span><span>TypeScript</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://doceencanto-oficial.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/doce-encanto" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="sistemas">
+                        <div class="project-cover project-cover--sistemas" role="img" aria-label="Capa ilustrativa do projeto SERENVIA"><i class="fas fa-code" aria-hidden="true"></i></div>
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Sistemas</span>
+                            <h3>SERENVIA</h3>
+                            <p>Plataforma demonstrativa de agendamento com áreas de paciente, profissional e administração. Utiliza dados fictícios.</p>
+                            <div class="tecnologias"><span>Next.js</span><span>TypeScript</span><span>Express</span><span>PostgreSQL</span><span>Prisma</span></div>
+                            <div class="botoes-projeto">
+                                <span class="project-status">Estudo de caso</span>
+                                <a href="https://github.com/awaldige/serenvia" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="landing">
+                        <div class="project-cover project-cover--landing" role="img" aria-label="Capa ilustrativa do projeto VOXIA Oratória"><i class="fas fa-window-maximize" aria-hidden="true"></i></div>
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Landing Pages</span>
+                            <h3>VOXIA Oratória</h3>
+                            <p>Landing page conceitual para escola de oratória, com apresentação de cursos e identidade visual.</p>
+                            <div class="tecnologias"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Tailwind CSS</span></div>
+                            <div class="botoes-projeto">
+                                <span class="project-status">Estudo de caso</span>
+                                <a href="https://github.com/awaldige/voxia-oratoria" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ecommerce">
+                        <div class="project-cover project-cover--ecommerce" role="img" aria-label="Capa ilustrativa do projeto OdontoPro"><i class="fas fa-cart-shopping" aria-hidden="true"></i></div>
+                        <div class="conteudo-projeto">
+                            <span class="project-category">E-commerce</span>
+                            <h3>OdontoPro</h3>
+                            <p>Loja virtual demonstrativa de produtos odontológicos com interface responsiva.</p>
+                            <div class="tecnologias"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://odonto-pro-lyart.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/OdontoPro" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ecommerce">
+                        <div class="project-cover project-cover--ecommerce" role="img" aria-label="Capa ilustrativa do projeto Cake Delivery Pro"><i class="fas fa-cart-shopping" aria-hidden="true"></i></div>
+                        <div class="conteudo-projeto">
+                            <span class="project-category">E-commerce</span>
+                            <h3>Cake Delivery Pro</h3>
+                            <p>Aplicação de pedidos de bolos com cálculo de valores e resumo de encomenda.</p>
+                            <div class="tecnologias"><span>JavaScript</span><span>HTML5</span><span>CSS3</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://cake-delivery-pro.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/Cake-Delivery-Pro" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ferramentas">
+                        <img src="img/gerador-orcamento.jpg" alt="Captura de tela do projeto Gerador de Orçamento" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Ferramentas</span>
+                            <h3>Gerador de Orçamento</h3>
+                            <p>Ferramenta online para montar orçamentos e organizar informações de serviços.</p>
+                            <div class="tecnologias"><span>JavaScript</span><span>HTML5</span><span>CSS3</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://gerador-orcamento-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/gerador-orcamento" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="dashboard">
+                        <img src="img/dashboard-demo.jpg" alt="Captura de tela do projeto Dashboard Analytics" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Dashboards</span>
+                            <h3>Dashboard Analytics</h3>
+                            <p>Painel analítico com indicadores e gráficos para visualização de dados.</p>
+                            <div class="tecnologias"><span>JavaScript</span><span>Chart.js</span><span>LocalStorage</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://dashboard-analytics-orpin.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/dashboard-analytics" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ferramentas">
+                        <img src="img/pesquisa-livros.jpg" alt="Captura de tela do projeto Pesquisa de Livros" width="640" height="360" loading="lazy">
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Ferramentas</span>
+                            <h3>Pesquisa de Livros</h3>
+                            <p>Ferramenta de pesquisa de livros por título e autor com integração à Google Books API.</p>
+                            <div class="tecnologias"><span>JavaScript</span><span>Google Books API</span><span>CSS3</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://pesquisa-de-livros.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/Pesquisa-de-Livros" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ferramentas">
+                        <div class="project-cover project-cover--ferramentas" role="img" aria-label="Capa ilustrativa do projeto Calculadora de Salário Líquido"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i></div>
+                        <div class="conteudo-projeto">
+                            <span class="project-category">Ferramentas</span>
+                            <h3>Calculadora de Salário Líquido</h3>
+                            <p>Calculadora demonstrativa de salário líquido com histórico e exportação de resultados.</p>
+                            <div class="tecnologias"><span>JavaScript</span><span>HTML5</span><span>CSS3</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://calculadora-de-salario-liquido.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/calculadora-de-Salario-Liquido" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card-projeto project-card reveal" data-category="ecommerce">
+                        <div class="project-cover project-cover--ecommerce" role="img" aria-label="Capa ilustrativa do projeto AW Technology Hardware Store"><i class="fas fa-cart-shopping" aria-hidden="true"></i></div>
+                        <div class="conteudo-projeto">
+                            <span class="project-category">E-commerce</span>
+                            <h3>AW Technology Hardware Store</h3>
+                            <p>Loja virtual de hardware com frontend, API e banco de dados para gestão de produtos.</p>
+                            <div class="tecnologias"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Node.js</span><span>PostgreSQL</span></div>
+                            <div class="botoes-projeto">
+                                <a href="https://aw-technology.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-card-p">Demonstração</a>
+                                <a href="https://github.com/awaldige/aw-technology" target="_blank" rel="noopener noreferrer" class="btn-card-s"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <p class="gallery-empty" id="gallery-empty" hidden>Nenhum projeto encontrado. Tente outro termo ou categoria.</p>
+                <div class="gallery-back">
+                    <a href="index.html" class="btn-secundario"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar para página inicial</a>
                 </div>
             </div>
         </section>
     </main>
-
     <footer>
         <div class="container footer-ultra-minimal">
-            <p>&copy; 2026 André Waldige | Desenvolvedor Full Stack</p>
+            <p>&copy; 2026 André Waldige | AW TECHNOLOGY</p>
             <div class="footer-links">
-                <a href="https://github.com/awaldige" target="_blank" aria-label="Acessar meu GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/awaldige780606/" target="_blank" aria-label="Acessar meu LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/awaldige" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/awaldige780606/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
-
     <script>
-        // Menu Mobile
         const menuBtn = document.querySelector('.mobile-menu-btn');
         const navMenu = document.querySelector('.nav-menu');
-        const icon = menuBtn.querySelector('i');
+        const menuIcon = menuBtn.querySelector('i');
 
         menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
+            const isOpen = navMenu.classList.toggle('active');
+            menuBtn.setAttribute('aria-expanded', String(isOpen));
+            menuIcon.classList.toggle('fa-bars', !isOpen);
+            menuIcon.classList.toggle('fa-times', isOpen);
         });
 
-        // Fechar menu ao clicar em links
-        document.querySelectorAll('.nav-menu a').forEach(link => {
+        navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-times');
             });
         });
 
-        // Animação de Reveal no Scroll
-        const observerOptions = { threshold: 0.1 };
+        const cards = [...document.querySelectorAll('.project-card')];
+        const filterButtons = [...document.querySelectorAll('.filter-btn')];
+        const searchInput = document.getElementById('project-search');
+        const resultLabel = document.getElementById('gallery-result');
+        const emptyMessage = document.getElementById('gallery-empty');
+        let activeFilter = 'todos';
+
+        function filterProjects() {
+            const term = searchInput.value.trim().toLocaleLowerCase('pt-BR');
+            let visible = 0;
+            cards.forEach(card => {
+                const matchesCategory = activeFilter === 'todos' || card.dataset.category === activeFilter;
+                const matchesText = card.textContent.toLocaleLowerCase('pt-BR').includes(term);
+                const show = matchesCategory && matchesText;
+                card.hidden = !show;
+                if (show) visible++;
+            });
+            resultLabel.textContent = 'Exibindo ' + visible + ' de ' + cards.length + ' projetos';
+            emptyMessage.hidden = visible !== 0;
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                activeFilter = button.dataset.filter;
+                filterButtons.forEach(item => {
+                    const selected = item === button;
+                    item.classList.toggle('active', selected);
+                    item.setAttribute('aria-pressed', String(selected));
+                });
+                filterProjects();
+            });
+        });
+        searchInput.addEventListener('input', filterProjects);
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }, { threshold: 0.08 });
+        cards.forEach(card => observer.observe(card));
     </script>
 </body>
 </html>
