@@ -934,305 +934,405 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT DA PÁGINA -->
+    <!-- JAVASCRIPT PRINCIPAL -->
     <script>
-        (() => {
-            "use strict";
+    (() => {
+        "use strict";
+
+        // =========================================
+        // CONFIGURAÇÕES
+        // =========================================
+
+        const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+        const DESKTOP_QUERY = "(min-width: 769px)";
+
+        const LOADER_MIN_DURATION = 3000;
+        const LOADER_TRANSITION_DURATION = 750;
+        const LOADER_FALLBACK_DURATION = 6500;
+
+        const prefersReducedMotion = window.matchMedia
+            ? window.matchMedia(REDUCED_MOTION_QUERY).matches
+            : false;
+
+        // =========================================
+        // INICIALIZAÇÃO DO PORTFÓLIO
+        // =========================================
+
+        function initializePortfolio() {
+
+            const loader = document.getElementById("loader");
+            const menuBtn = document.querySelector(".mobile-menu-btn");
+            const navMenu = document.querySelector(".nav-menu");
+            const currentYear = document.getElementById("current-year");
 
             // =========================================
-            // CONFIGURAÇÕES
+            // ANIMAÇÕES DE ENTRADA
             // =========================================
 
-            const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
-            const DESKTOP_QUERY = "(min-width: 769px)";
-            const LOADER_DURATION = 1200;
+            function initializeRevealAnimations() {
 
-            const prefersReducedMotion = window.matchMedia
-                ? window.matchMedia(REDUCED_MOTION_QUERY).matches
-                : false;
-
-            // =========================================
-            // INICIALIZAÇÃO
-            // =========================================
-
-            function initializePortfolio() {
-
-                // =========================================
-                // ELEMENTOS PRINCIPAIS
-                // =========================================
-
-                const loader = document.getElementById("loader");
-                const menuBtn = document.querySelector(".mobile-menu-btn");
-                const navMenu = document.querySelector(".nav-menu");
-                const currentYear = document.getElementById("current-year");
-
-                // =========================================
-                // LOADER
-                // =========================================
-
-                let loaderHidden = false;
-                let loaderTimer = null;
-
-                function hideLoader() {
-
-                    if (loaderHidden || !loader) {
-                        return;
-                    }
-
-                    loaderHidden = true;
-
-                    if (loaderTimer !== null) {
-                        window.clearTimeout(loaderTimer);
-                    }
-
-                    loader.classList.add("loader-hidden");
-                }
-
-                if (loader) {
-
-                    if (prefersReducedMotion) {
-                        hideLoader();
-                    } else {
-
-                        // Tempo máximo para evitar loader preso.
-                        loaderTimer = window.setTimeout(
-                            hideLoader,
-                            LOADER_DURATION
-                        );
-
-                        // Também oculta quando a página termina de carregar.
-                        window.addEventListener(
-                            "load",
-                            hideLoader,
-                            { once: true }
-                        );
-
-                    }
-
-                }
-
-                // =========================================
-                // ANIMAÇÕES DE ENTRADA
-                // =========================================
-
-                const revealElements = document.querySelectorAll(".reveal");
+                const revealElements =
+                    document.querySelectorAll(".reveal");
 
                 function activateAllRevealElements() {
+
                     revealElements.forEach(element => {
                         element.classList.add("active");
                     });
+
                 }
 
                 if (
                     prefersReducedMotion ||
                     !("IntersectionObserver" in window)
                 ) {
+                    activateAllRevealElements();
+                    return;
+                }
+
+                try {
+
+                    const revealObserver = new IntersectionObserver(
+                        (entries, observer) => {
+
+                            entries.forEach(entry => {
+
+                                if (entry.isIntersecting) {
+
+                                    entry.target.classList.add("active");
+
+                                    observer.unobserve(entry.target);
+
+                                }
+
+                            });
+
+                        },
+                        {
+                            threshold: 0.08,
+                            rootMargin: "0px 0px -40px 0px"
+                        }
+                    );
+
+                    revealElements.forEach(element => {
+                        revealObserver.observe(element);
+                    });
+
+                } catch (error) {
+
+                    console.warn(
+                        "Não foi possível iniciar as animações de entrada:",
+                        error
+                    );
 
                     activateAllRevealElements();
 
+                }
+
+            }
+
+            // =========================================
+            // LOADER
+            // =========================================
+
+            function initializeLoader() {
+
+                if (!loader) {
+                    initializeRevealAnimations();
+                    return;
+                }
+
+                if (prefersReducedMotion) {
+
+                    loader.classList.add("loader-hidden");
+                    initializeRevealAnimations();
+
+                    return;
+                }
+
+                const loaderStartTime = performance.now();
+
+                let pageLoaded = document.readyState === "complete";
+                let loaderHidden = false;
+                let revealStarted = false;
+
+                let minimumTimer = null;
+                let fallbackTimer = null;
+
+                function startRevealAfterLoader() {
+
+                    if (revealStarted) {
+                        return;
+                    }
+
+                    revealStarted = true;
+
+                    initializeRevealAnimations();
+
+                }
+
+                function hideLoader() {
+
+                    if (loaderHidden || !pageLoaded) {
+                        return;
+                    }
+
+                    const elapsed =
+                        performance.now() - loaderStartTime;
+
+                    const remainingTime = Math.max(
+                        0,
+                        LOADER_MIN_DURATION - elapsed
+                    );
+
+                    if (remainingTime > 0) {
+
+                        if (minimumTimer === null) {
+
+                            minimumTimer = window.setTimeout(() => {
+
+                                minimumTimer = null;
+                                hideLoader();
+
+                            }, remainingTime);
+
+                        }
+
+                        return;
+                    }
+
+                    loaderHidden = true;
+
+                    if (minimumTimer !== null) {
+                        window.clearTimeout(minimumTimer);
+                        minimumTimer = null;
+                    }
+
+                    if (fallbackTimer !== null) {
+                        window.clearTimeout(fallbackTimer);
+                        fallbackTimer = null;
+                    }
+
+                    loader.classList.add("loader-hidden");
+
+                    window.setTimeout(
+                        startRevealAfterLoader,
+                        LOADER_TRANSITION_DURATION
+                    );
+
+                }
+
+                function handlePageLoad() {
+
+                    pageLoaded = true;
+                    hideLoader();
+
+                }
+
+                // Proteção caso o evento load demore ou não seja disparado.
+                fallbackTimer = window.setTimeout(() => {
+
+                    pageLoaded = true;
+                    hideLoader();
+
+                }, LOADER_FALLBACK_DURATION);
+
+                if (pageLoaded) {
+
+                    hideLoader();
+
                 } else {
 
-                    try {
+                    window.addEventListener(
+                        "load",
+                        handlePageLoad,
+                        { once: true }
+                    );
 
-                        const revealObserver = new IntersectionObserver(
-                            (entries, observer) => {
+                }
 
-                                entries.forEach(entry => {
+            }
 
-                                    if (entry.isIntersecting) {
+            // =========================================
+            // MENU MOBILE
+            // =========================================
 
-                                        entry.target.classList.add("active");
+            if (menuBtn && navMenu) {
 
-                                        observer.unobserve(entry.target);
+                const menuIcon = menuBtn.querySelector("i");
+                const menuLinks = navMenu.querySelectorAll("a");
 
-                                    }
+                function updateMenuIcon(isOpen) {
 
-                                });
+                    if (!menuIcon) {
+                        return;
+                    }
 
-                            },
-                            {
-                                threshold: 0.08,
-                                rootMargin: "0px 0px -40px 0px"
-                            }
+                    menuIcon.classList.toggle("fa-bars", !isOpen);
+                    menuIcon.classList.toggle("fa-times", isOpen);
+
+                }
+
+                function closeMenu(returnFocus = false) {
+
+                    navMenu.classList.remove("active");
+
+                    menuBtn.setAttribute("aria-expanded", "false");
+                    menuBtn.setAttribute("aria-label", "Abrir menu");
+
+                    updateMenuIcon(false);
+
+                    if (returnFocus) {
+                        menuBtn.focus();
+                    }
+
+                }
+
+                function openMenu() {
+
+                    navMenu.classList.add("active");
+
+                    menuBtn.setAttribute("aria-expanded", "true");
+                    menuBtn.setAttribute("aria-label", "Fechar menu");
+
+                    updateMenuIcon(true);
+
+                }
+
+                // ABRIR E FECHAR PELO BOTÃO
+
+                menuBtn.addEventListener("click", () => {
+
+                    const isOpen =
+                        navMenu.classList.contains("active");
+
+                    if (isOpen) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
+
+                });
+
+                // FECHAR AO CLICAR EM UM LINK
+
+                menuLinks.forEach(link => {
+
+                    link.addEventListener("click", () => {
+                        closeMenu();
+                    });
+
+                });
+
+                // FECHAR AO CLICAR FORA DO MENU
+
+                document.addEventListener("pointerdown", event => {
+
+                    const clickedInsideMenu =
+                        navMenu.contains(event.target);
+
+                    const clickedMenuButton =
+                        menuBtn.contains(event.target);
+
+                    if (
+                        navMenu.classList.contains("active") &&
+                        !clickedInsideMenu &&
+                        !clickedMenuButton
+                    ) {
+                        closeMenu();
+                    }
+
+                });
+
+                // FECHAR COM A TECLA ESC
+
+                document.addEventListener("keydown", event => {
+
+                    if (
+                        event.key === "Escape" &&
+                        navMenu.classList.contains("active")
+                    ) {
+                        closeMenu(true);
+                    }
+
+                });
+
+                // FECHAR O MENU AO VOLTAR PARA DESKTOP
+
+                if (window.matchMedia) {
+
+                    const desktopMediaQuery =
+                        window.matchMedia(DESKTOP_QUERY);
+
+                    const handleScreenChange = event => {
+
+                        if (event.matches) {
+                            closeMenu();
+                        }
+
+                    };
+
+                    if (
+                        typeof desktopMediaQuery.addEventListener === "function"
+                    ) {
+
+                        desktopMediaQuery.addEventListener(
+                            "change",
+                            handleScreenChange
                         );
 
-                        revealElements.forEach(element => {
-                            revealObserver.observe(element);
-                        });
+                    } else if (
+                        typeof desktopMediaQuery.addListener === "function"
+                    ) {
 
-                    } catch (error) {
-
-                        // Se o observador falhar, mantém todo o conteúdo visível.
-                        activateAllRevealElements();
-
-                    }
-
-                }
-
-                // =========================================
-                // MENU MOBILE
-                // =========================================
-
-                if (menuBtn && navMenu) {
-
-                    const menuIcon = menuBtn.querySelector("i");
-                    const menuLinks = navMenu.querySelectorAll("a");
-
-                    function updateMenuIcon(isOpen) {
-
-                        if (!menuIcon) {
-                            return;
-                        }
-
-                        menuIcon.classList.toggle("fa-bars", !isOpen);
-                        menuIcon.classList.toggle("fa-times", isOpen);
-                    }
-
-                    function closeMenu(returnFocus = false) {
-
-                        navMenu.classList.remove("active");
-
-                        menuBtn.setAttribute("aria-expanded", "false");
-                        menuBtn.setAttribute("aria-label", "Abrir menu");
-
-                        updateMenuIcon(false);
-
-                        if (returnFocus) {
-                            menuBtn.focus();
-                        }
-                    }
-
-                    function openMenu() {
-
-                        navMenu.classList.add("active");
-
-                        menuBtn.setAttribute("aria-expanded", "true");
-                        menuBtn.setAttribute("aria-label", "Fechar menu");
-
-                        updateMenuIcon(true);
-                    }
-
-                    // ABRIR E FECHAR PELO BOTÃO
-                    menuBtn.addEventListener("click", () => {
-
-                        const isOpen =
-                            navMenu.classList.contains("active");
-
-                        if (isOpen) {
-                            closeMenu();
-                        } else {
-                            openMenu();
-                        }
-
-                    });
-
-                    // FECHAR AO CLICAR EM UM LINK
-                    menuLinks.forEach(link => {
-
-                        link.addEventListener("click", () => {
-                            closeMenu();
-                        });
-
-                    });
-
-                    // FECHAR AO CLICAR FORA DO MENU
-                    document.addEventListener("pointerdown", event => {
-
-                        const clickedInsideMenu =
-                            navMenu.contains(event.target);
-
-                        const clickedMenuButton =
-                            menuBtn.contains(event.target);
-
-                        if (
-                            navMenu.classList.contains("active") &&
-                            !clickedInsideMenu &&
-                            !clickedMenuButton
-                        ) {
-                            closeMenu();
-                        }
-
-                    });
-
-                    // FECHAR COM A TECLA ESC
-                    document.addEventListener("keydown", event => {
-
-                        if (
-                            event.key === "Escape" &&
-                            navMenu.classList.contains("active")
-                        ) {
-                            closeMenu(true);
-                        }
-
-                    });
-
-                    // FECHAR O MENU QUANDO VOLTAR AO DESKTOP
-                    if (window.matchMedia) {
-
-                        const desktopMediaQuery =
-                            window.matchMedia(DESKTOP_QUERY);
-
-                        const handleScreenChange = event => {
-
-                            if (event.matches) {
-                                closeMenu();
-                            }
-
-                        };
-
-                        if (
-                            typeof desktopMediaQuery.addEventListener === "function"
-                        ) {
-
-                            desktopMediaQuery.addEventListener(
-                                "change",
-                                handleScreenChange
-                            );
-
-                        } else if (
-                            typeof desktopMediaQuery.addListener === "function"
-                        ) {
-
-                            // Compatibilidade com navegadores antigos.
-                            desktopMediaQuery.addListener(
-                                handleScreenChange
-                            );
-
-                        }
+                        desktopMediaQuery.addListener(
+                            handleScreenChange
+                        );
 
                     }
 
-                }
-
-                // =========================================
-                // ANO AUTOMÁTICO NO RODAPÉ
-                // =========================================
-
-                if (currentYear) {
-                    currentYear.textContent = new Date().getFullYear();
                 }
 
             }
 
             // =========================================
-            // EXECUÇÃO SEGURA
+            // ANO AUTOMÁTICO NO RODAPÉ
             // =========================================
 
-            if (document.readyState === "loading") {
+            if (currentYear) {
 
-                document.addEventListener(
-                    "DOMContentLoaded",
-                    initializePortfolio,
-                    { once: true }
-                );
-
-            } else {
-
-                initializePortfolio();
+                currentYear.textContent =
+                    new Date().getFullYear();
 
             }
 
-        })();
+            // =========================================
+            // INICIAR LOADER
+            // =========================================
+
+            initializeLoader();
+
+        }
+
+        // =========================================
+        // EXECUÇÃO SEGURA
+        // =========================================
+
+        if (document.readyState === "loading") {
+
+            document.addEventListener(
+                "DOMContentLoaded",
+                initializePortfolio,
+                { once: true }
+            );
+
+        } else {
+
+            initializePortfolio();
+
+        }
+
+    })();
     </script>
 
 </body>
